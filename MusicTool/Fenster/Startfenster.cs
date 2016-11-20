@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MusicTool
+namespace MusicTool.Fenster
 {
-	public partial class Form1 : Form
+	public partial class Startfenster : Form
 	{
-		public Form1()
+		public Startfenster()
 		{
 			InitializeComponent();
 		}

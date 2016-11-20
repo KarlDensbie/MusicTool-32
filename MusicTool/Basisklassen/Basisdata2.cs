@@ -1,34 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Text;
 
-using MusicTool.Fenster;
+using MusicTool;
 
-namespace MusicTool
+namespace MusicTool.Basisklassen
 {
-
-	/// <summary> Klasse       : Program
+	/// <summary> Klasse       : bcl_Basisdata2
+	/// <para>Basisklasse für alle Datensätze mit 2 Namen</para>
 	/// .
 	/// <para>    Programmierer    : Michael Pütz</para>
 	/// <para>    getestet am      : </para>
 	/// </summary>
-	static class Program
+	public class bcl_Basisdata2
 	{
 		#region VersionInfo
 
-		private static string zz_klassenName= "Program";
-		private static string zz_namespace = "MusicTool";
-		private static dType zz_datenTyp = dType.MainPrg;
+		private static string zz_klassenName= "Basisdata2";
+		private static string zz_namespace = "MusicTool.Basisklassen";
+		private static dType zz_datenTyp = dType.Basisdaten;
 		private static string zz_hauptversion= "0";
 		private static string zz_nebenversion= "1";
-		private static string zz_revision= "1";
-		private static string zz_letzteBearbeitung= "2016-11-06 12:11.44";
-		private static string zz_ersteBearbeitung= "2016-11-06 12:11.44";
+		private static string zz_revision= "3";
+		private static string zz_letzteBearbeitung= "2016-11-11  12:31:24";
+		private static string zz_ersteBearbeitung= "2016-11-06 12:35.35";
 		private static string zz_getestet= "";
 		#region VersionInfoEigenschaften
-
 		/// <summary> Eigenschaft: zz_KlassenName
 		/// <para>gibt den Namen der Klasse aus</para>
 		/// <para>TYP: STRING</para>
@@ -151,15 +149,124 @@ namespace MusicTool
 
 		#endregion VersionInfo
 
-		/// <summary>
-		/// Der Haupteinstiegspunkt für die Anwendung.
+		#region Attribute
+
+		/// <summary>_typ
+		/// <para>Datentyp des Objekts</para>
 		/// </summary>
-		[STAThread]
-		static void Main()
+		private dType _typ;
+
+		/// <summary>_name
+		/// <para>Name des Objekts</para>
+		/// <para>TYP: STRING</para>
+		/// </summary>
+		private string _name;
+
+		/// <summary>_altName
+		/// <para>alternativer Name des Objekts</para>
+		/// <para>TYP: STRING</para>
+		/// </summary>
+		private string _altName;
+
+		/// <summary>_index
+		/// <para>Index des Objekts</para>
+		/// <para>TYP: INT</para>
+		/// </summary>
+		private int _index;
+
+		#endregion Attribute
+
+		#region Konstruktor
+
+		/// <summary> Konstruktor(name,name2,idx,typ)
+		/// <para>initialisiert die Instanz</para>
+		/// .
+		/// <para>    Programmierer    : Michael Pütz</para>
+		///           Version          : 0
+		/// <para>    Unterversion     : 1</para>
+		///           Revision         : 3
+		/// <para>    letzteBearbeitung: 2016-11-11  12:28:11</para>
+		/// <para>    ersteBearbeitung : 2016-11-06  12:46:24</para>
+		/// .
+		/// <para>    getestet am      : </para>
+		/// </summary>
+		/// <param name="name">Name des Objekts, TYP: STRING</param>
+		/// <param name="altName">alternativer Name des Objekts, TYP: STRING</param>
+		/// <param name="idx">Index des Objekts, TYP: INT</param>
+		/// <param name="typ">Datentyp des Objekts, TYP: dType</param>
+		public bcl_Basisdata2( string name , string altName , int idx ,dType typ )
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault( false );
-			Application.Run( new Startfenster() );
+			_name = name;
+			_altName = altName;
+			_index = idx;
+			_typ = typ;
 		}
+
+		#endregion Konstruktor
+
+		#region Eigenschaften
+
+		/// <summary> Eigenschaft: Index
+		/// <para>gibt den Index des Objekts aus</para>
+		/// <para>TYP: INT</para>
+		/// .
+		/// <para>    Programmierer    : Michael Pütz</para>
+		///           Version          : 0
+		/// <para>    Unterversion     : 1</para>
+		///           Revision         : 2
+		/// <para>    letzteBearbeitung: 2016-11-11  12:28:54</para>
+		/// <para>    ersteBearbeitung : 2016-11-06  12:50:10</para>
+		/// .
+		/// <para>    getestet am      : </para>
+		/// </summary>
+		public int Index { get { return _index; } }
+
+		/// <summary> Eigenschaft: Name
+		/// <para>gibt den Namen des Objekts aus</para>
+		/// <para>TYP: STRING</para>
+		/// .
+		/// <para>    Programmierer    : Michael Pütz</para>
+		///           Version          : 0
+		/// <para>    Unterversion     : 1</para>
+		///           Revision         : 1
+		/// <para>    letzteBearbeitung: 2016-11-06  12:51:49</para>
+		/// <para>    ersteBearbeitung : 2016-11-06  12:51:49</para>
+		/// .
+		/// <para>    getestet am      : </para>
+		/// </summary>
+		public string Name { get { return _name; } }
+
+		/// <summary> Eigenschaft: AltName
+		/// <para>gibt den alternativen Namen des Objekts aus</para>
+		/// <para>TYP: STRING</para>
+		/// .
+		/// <para>    Programmierer    : Michael Pütz</para>
+		///           Version          : 0
+		/// <para>    Unterversion     : 1</para>
+		///           Revision         : 1
+		/// <para>    letzteBearbeitung: 2016-11-06  13:10:57</para>		
+		/// <para>    ersteBearbeitung : 2016-11-06  12:51:49</para>
+		/// .
+		/// <para>    getestet am      : </para>
+		/// </summary>
+		public string AltName { get { return _altName; } }
+
+		/// <summary> Eigenschaft: Typ
+		/// <para>gibt den Datentyp des Objekts aus</para>
+		/// <para>TYP: dType</para>
+		/// .
+		/// <para>    Programmierer    : Michael Pütz</para>
+		///           Version          : 0
+		/// <para>    Unterversion     : 1</para>
+		///           Revision         : 1
+		/// <para>    letzteBearbeitung: 2016-11-06  17:13:43</para>
+		/// <para>    ersteBearbeitung : 2016-11-06  17:13:43</para>
+		/// .
+		/// <para>    getestet am      : </para>
+		/// </summary>
+		public dType Typ { get { return _typ; } }
+
+		#endregion Eigenschaften
+
 	}
 }
