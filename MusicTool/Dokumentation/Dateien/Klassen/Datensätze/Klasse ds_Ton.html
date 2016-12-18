@@ -1,0 +1,488 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Adresse der Datei:
+		V:/Dateien/Klassen/Datensätze/Klasse ds_Ton.html
+	 -->
+<!-- Dateipfad DIESER Datei :
+		V:/Dateien/Klassen/Datensätze/
+-->
+<!-- Relativer Pfad zu Stylesheet.CSS:
+../../../
+-->
+
+<html lang="de-de" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Michael P&uuml;tz">
+	<BASE target="_self" />
+	<link rel="stylesheet" href="../../../stylesheet.css" type="text/css">
+	<title>Beschreibung</title>
+</head>
+<body>
+	<P align="center" id="hervorgehoben1a"><!-- Überschrift -->
+		<i>Klasse: </i>
+		<FONT size="7">ds_Ton</FONT>
+	</P><!-- Überschrift ENDE -->
+	<P>&nbsp;</P>
+	<P align="left"><!-- Erklährung -->
+		ABGELEITET VON: <span id="Ableitung">bcl_Basisdata</span><BR>
+		<BR>
+Diese Klasse ist ein Datensatz für die Datenbank <span id="NameKlasse">DB_Töne</span><BR>
+Der Datensatz kann von allen Klassen ausgewertet werden. 
+Er kann auch über die Basisklasse <span id="NameKlasse">bcl_Basisdata</span> angesprochen werden.<BR>
+Als Typ wird der Typ <span id="hervorgehoben2c">Tondaten</span> gespeichert.
+	</P><!-- Erklährung ENDE -->
+	<P align="left" color="black"><!-- Aufruf -->
+		<i>Aufruf: </i>
+		<span id="Aufruf">
+			<span id="NameKlasse">ds_Ton</span>
+			( 
+				<span id="Parameter">name</span> , 
+				<span id="Parameter">index</span> , 
+				<span id="Parameter">grundTon</span> , 
+				<span id="Parameter">enhU</span> , 
+				<span id="Parameter">enhO</span> 
+			)
+		</span>
+	</P><!-- Aufruf ENDE -->
+	<P align="left"><!-- öffentliche Schnittstellen -->
+		<table border="1"><!-- Tabelle: Schnittstellen -->
+			<colgroup>
+				<col width="198" valign="top">
+				<col width="600" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Schnittstellen: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/Klasse-ds_Ton.png" 
+						alt="Klasse-ds_Ton" 
+						width="198" 
+						height="629">
+					<figcaption>Klasse-ds_Ton</figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3>öffentliche Schnittstellen:</h3>
+					<ul><!-- Datenverkehr -->
+						<strong>Eingabe:</strong>
+						<ul><!-- Eingabe -->
+							<li><span id="NameMethode">Konstruktor</span>(
+								<span id="Parameter">name</span> , 
+								<span id="Parameter">id</span> , 
+								<span id="Parameter">grundTon</span> , 
+								<span id="Parameter">enhU</span> , 
+								<span id="Parameter">enhO</span>
+								)
+							</li>
+							<ul><!-- Konstruktor -->
+								<b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+								Die Parameter
+								<ul><!-- Liste -->
+									<li><span id="Parameter">name</span> , </li>
+									<li><span id="Parameter">id</span> (als <i>INT</i>) und </li>
+									<li><span id="Parameter">typ</span> = dType.Tondaten</li>
+								</ul><!-- Liste ENDE -->
+								werden an die Basisklasse <span id="NameKlasse">bcl_Basisdata</span> übergeben.
+								<li>Folgende Daten werden gespeichert:<br>
+									<ol><!-- Tabelle -->
+										<li><!-- Parameter: name -->
+											<span id="Parameter">name</span><BR>
+											 	==> <span id="Beschreibung"> Name des Tons</span><br>
+												==> <i>TYP:<b> STRING</b></i>
+										</li><!-- Parameter: name ENDE -->
+										<li><!-- Parameter: index -->
+											<span id="Parameter">id</span><BR>
+											 	==> <span id="Beschreibung"> ID des Tons in der Datenbank <span id="NameKlasse">DB_Töne</span></span><br>
+												==> <i>TYP:<b> eTon</b></i>
+										</li><!-- Parameter: index ENDE -->
+										<li><!-- Parameter: grundTon -->
+											<span id="Parameter">grundTon</span><BR>
+											 	==> <span id="Beschreibung"> Grundton des Tons (Tonfamilie)</span><br>
+												==> <i>TYP:<b> eGrundton</b></i>
+										</li><!-- Parameter: grundTon ENDE -->
+										<li><!-- Parameter: enhU -->
+											<span id="Parameter">enhU</span><BR>
+											 	==> <span id="Beschreibung"> ID der unteren enharmonischen Verwechselung</span><br>
+												==> <i>TYP:<b> eTon</b></i>
+										</li><!-- Parameter: enhU ENDE -->
+										<li><!-- Parameter: enhO -->
+											<span id="Parameter">enhO</span><BR>
+											 	==> <span id="Beschreibung"> ID der oberen enharmonischen Verwechselung</span><br>
+												==> <i>TYP:<b> eTon</b></i>
+										</li><!-- Parameter: enhO ENDE -->
+									</ol><!-- Tabelle ENDE -->
+								</li>
+							</ul><!-- Konstruktor ENDE -->
+							<br>
+						</ul><!-- Eingabe ENDE -->
+						-------------------------------------------------------------<br>
+						<br>
+						<strong>Ausgabe:</strong>
+						<ul><!-- Ausgabe -->
+							<li><strong>Eigenschaften:</strong></li>
+							<ol><!-- Eigenschaften -->
+								<li><!-- Eigenschaft: TonName -->
+									<span id="NameEigenschaft">TonName</span>
+									<br>
+									<span id="Beschreibung">gibt den Namen des Tons aus</span>
+									<br>
+									==> <i>TYP:<b> STRING</b></i>
+								</li><!-- Eigenschaft: TonName ENDE -->
+								<li><!-- Eigenschaft: TonID -->
+									<span id="NameEigenschaft">TonID</span>
+									<br>
+									<span id="Beschreibung">gibt den Ton-ID als eTon aus</span>
+									<br>
+									==> <i>TYP:<b> eTon</b></i>
+								</li><!-- Eigenschaft: TonID ENDE -->
+								<li><!-- Eigenschaft: Grundton -->
+									<span id="NameEigenschaft">Grundton</span>
+									<br>
+									<span id="Beschreibung">gibt den Grundton als eGrundton aus</span>
+									<br>
+									==> <i>TYP:<b> eGrundton</b></i>
+								</li><!-- Eigenschaft: Grundton ENDE -->
+								<li><!-- Eigenschaft: IntGrundton -->
+									<span id="NameEigenschaft">IntGrundton</span>
+									<br>
+									<span id="Beschreibung">gibt den Grundton als INT aus</span>
+									<br>
+									==> <i>TYP:<b> INT</b></i>
+								</li><!-- Eigenschaft: IntGrundton ENDE -->
+								<li><!-- Eigenschaft: EnhU -->
+									<span id="NameEigenschaft">EnhU</span>
+									<br>
+									<span id="Beschreibung">gibt den Ton-ID der unteren enharmonischen Verwechselung als eTon aus</span>
+									<br>
+									==> <i>TYP:<b> eTon</b></i>
+								</li><!-- Eigenschaft: EnhU ENDE -->
+								<li><!-- Eigenschaft: IntEnhU -->
+									<span id="NameEigenschaft">IntEnhU</span>
+									<br>
+									<span id="Beschreibung">gibt den Ton-ID der unteren enharmonischen Verwechselung als INT aus</span>
+									<br>
+									==> <i>TYP:<b> INT</b></i>
+								</li><!-- Eigenschaft: IntEnhU ENDE -->
+								<li><!-- Eigenschaft: EnhO -->
+									<span id="NameEigenschaft">EnhO</span>
+									<br>
+									<span id="Beschreibung">gibt den Ton-ID der oberen enharmonischen Verwechselung als eTon aus</span>
+									<br>
+									==> <i>TYP:<b> eTon</b></i>
+								</li><!-- Eigenschaft: EnhO ENDE -->
+								<li><!-- Eigenschaft: IntEnhO -->
+									<span id="NameEigenschaft">IntEnhO</span>
+									<br>
+									<span id="Beschreibung">gibt den Ton-ID der oberen enharmonischen Verwechselung als INT aus</span>
+									<br>
+									==> <i>TYP:<b> INT</b></i>
+								</li><!-- Eigenschaft: IntEnhO ENDE -->
+								<br>
+								<li><strong>geerbte Eigenschaften:</strong></li>
+								<ol><!-- geerbte Eigenschaften -->
+									<li><!-- Eigenschaft: Typ -->
+										<span id="NameEigenschaft">Typ</span>
+										<br>
+										<span id="Beschreibung">gibt den Typ des Datensatzes aus</span>
+										<br>
+										==> <i>TYP:<b> dType</b></i>
+									</li><!-- Eigenschaft: Typ ENDE -->
+									<li><!-- Eigenschaft: ID -->
+										<span id="NameEigenschaft">ID</span>
+										<br>
+										<span id="Beschreibung">gibt die ID der Instanz aus</span>
+										<br>
+										==> <i>TYP:<b> INT</b></i>
+									</li><!-- Eigenschaft: ID ENDE -->
+									<li><!-- Eigenschaft: Name -->
+										<span id="NameEigenschaft">Name</span>
+										<br>
+										<span id="Beschreibung">gibt den Namen des Objekts aus</span>
+										<br>
+										==> <i>TYP:<b> STRING</b></i>
+									</li><!-- Eigenschaft: Name ENDE -->
+								</ol><!-- geerbte Eigenschaften ENDE -->
+							</ol><!-- Eigenschaften ENDE -->
+							<br>
+							<li><strong>Methoden:</strong></li>
+							<ol><!-- Methoden -->
+								<li><!-- Methode: enhU() -->
+									<span id="NameMethode">enhU()</span>
+									<br>
+									<span id="Beschreibung">gibt die untere enharmonische Verwechselung als Ton-Objekt aus</span>
+									<br>
+									<u>Parameter:</u> KEINE
+									<br>
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE -->
+										<span id="Beschreibung">Ton-Objekt</span><br>
+											==> <i>TYP:<b> ds_Ton</b></i>
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: enhU ENDE -->
+								<br>
+								<li><!-- Methode: enhO() -->
+									<span id="NameMethode">enhO()</span>
+									<br>
+									<span id="Beschreibung">gibt die obere enharmonische Verwechselung als Ton-Objekt aus</span>
+									<br>
+									<u>Parameter:</u> KEINE
+									<br>
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE -->
+										<span id="Beschreibung">Ton-Objekt</span><br>
+											==> <i>TYP:<b> ds_Ton</b></i>
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: enhU ENDE -->
+								<br>
+							</ol><!-- Methoden ENDE -->
+						</ul><!-- Ausgabe ENDE -->
+					</ul><!-- Datenverkehr ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Schnittstellen: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Schnittstellen ENDE -->
+	</P><!-- öffentliche Schnittstellen ENDE -->
+	<br>
+	<br>
+	<P align="left"><!-- Interne Struktur -->
+		<table border="1"><!-- Tabelle: Intern -->
+			<colgroup>
+				<col width="420" valign="top">
+				<col width="540" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Intern: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/ds_Ton_verb.png" 
+						alt="ds_Ton_verb"
+						width="420" 
+						height="841"
+					>
+					<figcaption>ds_Ton_verb</figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3> Interne Struktur: </h3>
+					Die <b>VersionInfo</b> kann nur durch eine <b>spezielle Klasse</b> angezeigt werden.<br>
+					<ul><!-- INHALT -->
+						<li><strong>Attribute:</strong></li>
+						<ol><!-- Attribute -->
+							<li><!-- Attribut: _tonID -->
+								<span id="NameAttribut">_tonID</span><br>
+								<span id="Beschreibung">ID des Tons in der Datenbank <span id="NameKlasse">DB_Töne</span></span><br>
+								==> <i>TYP:<b> eTon</b></i><br>
+							</li><!-- Attribut: _tonID ENDE -->
+							<li><!-- Attribut: _grundton -->
+								<span id="NameAttribut">_grundton</span><br>
+								<span id="Beschreibung">Grundton des Tons (Tonfamilie)</span><br>
+								==> <i>TYP:<b> eGrundton</b></i><br>
+							</li><!-- Attribut: _grundton ENDE -->
+							<li><!-- Attribut: _enhU -->
+								<span id="NameAttribut">_enhU</span><br>
+								<span id="Beschreibung">ID der unteren enharmonischen Verwechselung</span><br>
+								==> <i>TYP:<b> eTon</b></i><br>
+							</li><!-- Attribut: _enhU ENDE -->
+							<li><!-- Attribut: _enhO -->
+								<span id="NameAttribut">_enhO</span><br>
+								<span id="Beschreibung">ID der oberen enharmonischen Verwechselung</span><br>
+								==> <i>TYP:<b> eTon</b></i><br>
+							</li><!-- Attribut: _enhO ENDE -->
+						</ol><!-- Attribute ENDE -->
+						<br>
+						<li><span id="NameMethode">Konstruktor</span>(
+							<span id="Parameter">name</span> , 
+							<span id="Parameter">id</span> , 
+							<span id="Parameter">grundTon</span> , 
+							<span id="Parameter">enhU</span> , 
+							<span id="Parameter">enhO</span>
+							)
+						</li>
+						<ul><!-- Konstruktor -->
+							<li><b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+								Die Parameter
+								<ul><!-- Liste -->
+									<li><span id="Parameter">name</span> , </li>
+									<li><span id="Parameter">id</span> (als <i>INT</i>) und </li>
+									<li><span id="Parameter">typ</span> = dType.Tondaten</li>
+								</ul><!-- Liste ENDE -->
+								werden an die Basisklasse <span id="NameKlasse">bcl_Basisdata</span> übergeben.
+							</li>
+							<li>Folgende Daten werden gespeichert:<br>
+								<ol><!-- Tabelle -->
+									<li><!-- Parameter: name -->
+										<span id="Parameter">name</span><BR>
+										 	==> <span id="Beschreibung"> Name des Tons</span><br>
+											==> <i>TYP:<b> STRING</b></i>
+									</li><!-- Parameter: name ENDE -->
+									<li><!-- Parameter: index -->
+										<span id="Parameter">id</span><BR>
+										 	==> <span id="Beschreibung"> ID des Tons in der Datenbank <span id="NameKlasse">DB_Töne</span></span><br>
+											==> <i>TYP:<b> eTon</b></i>
+									</li><!-- Parameter: index ENDE -->
+									<li><!-- Parameter: grundTon -->
+										<span id="Parameter">grundTon</span><BR>
+										 	==> <span id="Beschreibung"> Grundton des Tons (Tonfamilie)</span><br>
+											==> <i>TYP:<b> eGrundton</b></i>
+									</li><!-- Parameter: grundTon ENDE -->
+									<li><!-- Parameter: enhU -->
+										<span id="Parameter">enhU</span><BR>
+										 	==> <span id="Beschreibung"> ID der unteren enharmonischen Verwechselung</span><br>
+											==> <i>TYP:<b> eTon</b></i>
+									</li><!-- Parameter: enhU ENDE -->
+									<li><!-- Parameter: enhO -->
+										<span id="Parameter">enhO</span><BR>
+										 	==> <span id="Beschreibung"> ID der oberen enharmonischen Verwechselung</span><br>
+											==> <i>TYP:<b> eTon</b></i>
+									</li><!-- Parameter: enhO ENDE -->
+								</ol><!-- Tabelle ENDE -->
+							</li>
+						</ul><!-- Konstruktor ENDE -->
+						<br>
+						<li><strong>Eigenschaften:</strong></li>
+						<ol><!-- Eigenschaften -->
+							<li><!-- Eigenschaft: TonName -->
+								<span id="NameEigenschaft">TonName</span>
+								<br>
+								<span id="Beschreibung">gibt den Namen des Tons aus</span>
+								<br>
+								==> <i>TYP:<b> STRING</b></i>
+							</li><!-- Eigenschaft: TonName ENDE -->
+							<li><!-- Eigenschaft: TonID -->
+								<span id="NameEigenschaft">TonID</span>
+								<br>
+								<span id="Beschreibung">gibt den Ton-ID als eTon aus</span>
+								<br>
+								==> <i>TYP:<b> eTon</b></i>
+							</li><!-- Eigenschaft: TonID ENDE -->
+							<li><!-- Eigenschaft: Grundton -->
+								<span id="NameEigenschaft">Grundton</span>
+								<br>
+								<span id="Beschreibung">gibt den Grundton als eGrundton aus</span>
+								<br>
+								==> <i>TYP:<b> eGrundton</b></i>
+							</li><!-- Eigenschaft: Grundton ENDE -->
+							<li><!-- Eigenschaft: IntGrundton -->
+								<span id="NameEigenschaft">IntGrundton</span>
+								<br>
+								<span id="Beschreibung">gibt den Grundton als INT aus</span>
+								<br>
+								==> <i>TYP:<b> INT</b></i>
+							</li><!-- Eigenschaft: IntGrundton ENDE -->
+							<li><!-- Eigenschaft: EnhU -->
+								<span id="NameEigenschaft">EnhU</span>
+								<br>
+								<span id="Beschreibung">gibt den Ton-ID der unteren enharmonischen Verwechselung als eTon aus</span>
+								<br>
+								==> <i>TYP:<b> eTon</b></i>
+							</li><!-- Eigenschaft: EnhU ENDE -->
+							<li><!-- Eigenschaft: IntEnhU -->
+								<span id="NameEigenschaft">IntEnhU</span>
+								<br>
+								<span id="Beschreibung">gibt den Ton-ID der unteren enharmonischen Verwechselung als INT aus</span>
+								<br>
+								==> <i>TYP:<b> INT</b></i>
+							</li><!-- Eigenschaft: IntEnhU ENDE -->
+							<li><!-- Eigenschaft: EnhO -->
+								<span id="NameEigenschaft">EnhO</span>
+								<br>
+								<span id="Beschreibung">gibt den Ton-ID der oberen enharmonischen Verwechselung als eTon aus</span>
+								<br>
+								==> <i>TYP:<b> eTon</b></i>
+							</li><!-- Eigenschaft: EnhO ENDE -->
+							<li><!-- Eigenschaft: IntEnhO -->
+								<span id="NameEigenschaft">IntEnhO</span>
+								<br>
+								<span id="Beschreibung">gibt den Ton-ID der oberen enharmonischen Verwechselung als INT aus</span>
+								<br>
+								==> <i>TYP:<b> INT</b></i>
+							</li><!-- Eigenschaft: IntEnhO ENDE -->
+							<br>
+							<li><strong>geerbte Eigenschaften:</strong></li>
+							<ol><!-- geerbte Eigenschaften -->
+								<li><!-- Eigenschaft: Typ -->
+									<span id="NameEigenschaft">Typ</span>
+									<br>
+									<span id="Beschreibung">gibt den Typ des Datensatzes aus</span>
+									<br>
+									==> <i>TYP:<b> dType</b></i>
+								</li><!-- Eigenschaft: Typ ENDE -->
+								<li><!-- Eigenschaft: ID -->
+									<span id="NameEigenschaft">ID</span>
+									<br>
+									<span id="Beschreibung">gibt die ID der Instanz aus</span>
+									<br>
+									==> <i>TYP:<b> INT</b></i>
+								</li><!-- Eigenschaft: ID ENDE -->
+								<li><!-- Eigenschaft: Name -->
+									<span id="NameEigenschaft">Name</span>
+									<br>
+									<span id="Beschreibung">gibt den Namen des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> STRING</b></i>
+								</li><!-- Eigenschaft: Name ENDE -->
+							</ol><!-- geerbte Eigenschaften ENDE -->
+						</ol><!-- Eigenschaften ENDE -->
+						<br>
+						<li><strong>Methoden:</strong></li>
+						<ol><!-- Methoden -->
+							<li><!-- Methode: enhU() -->
+								<span id="NameMethode">enhU()</span>
+								<br>
+								<span id="Beschreibung">gibt die untere enharmonische Verwechselung als Ton-Objekt aus</span>
+								<br>
+								<u>Parameter:</u> KEINE
+								<br>
+								<u>Rückgabe:</u><br>
+								<ul><!-- RÜCKGABE -->
+									<span id="Beschreibung">Ton-Objekt</span><br>
+										==> <i>TYP:<b> ds_Ton</b></i>
+								</ul><!-- RÜCKGABE ENDE -->
+							</li><!-- Methode: enhU ENDE -->
+							<br>
+							<li><!-- Methode: enhO() -->
+								<span id="NameMethode">enhO()</span>
+								<br>
+								<span id="Beschreibung">gibt die obere enharmonische Verwechselung als Ton-Objekt aus</span>
+								<br>
+								<u>Parameter:</u> KEINE
+								<br>
+								<u>Rückgabe:</u><br>
+								<ul><!-- RÜCKGABE -->
+									<span id="Beschreibung">Ton-Objekt</span><br>
+										==> <i>TYP:<b> ds_Ton</b></i>
+								</ul><!-- RÜCKGABE ENDE -->
+							</li><!-- Methode: enhU ENDE -->
+							<br>
+						</ol><!-- Methoden ENDE -->
+					</ul><!-- INHALT ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Intern: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Intern ENDE -->
+	</P><!-- Interne Struktur ENDE -->
+	<br>
+	<br>
+	VERSIONEN:
+	<ol>
+		<b>Klasse:</b> 0.1.1
+		<li><b>Konstruktor:</b> 0.1.1</li>
+		<li><b>Eigenschaften:</b></li>
+		<ol>
+			<li>TonName: 0.1.1</li>
+			<li>Grundton: 0.1.1</li>
+			<li>IntGrundton: 0.1.1</li>
+			<li>EnhU: 0.1.1</li>
+			<li>IntEnhU: 0.1.1</li>
+			<li>EnhO: 0.1.1</li>
+			<li>IntEnhO: 0.1.1</li>
+		</ol>
+		<li><b> Methoden:</b></li>
+		<ol>
+			<li>-enhU(): 0.1.1</li>
+			<li>-enhO(): 0.1.1</li>
+		</ol>
+	</ol>
+	<br>
+	<br>
+
+</body>
+</html>
+
+<!-- Version 0.1,
+	 Revision 1
+-->
+<!-- Editiert: 10.12.2016 17:50:36
+-->

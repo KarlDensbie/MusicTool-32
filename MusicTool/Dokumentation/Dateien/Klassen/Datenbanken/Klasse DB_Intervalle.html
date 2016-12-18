@@ -1,0 +1,281 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Adresse der Datei:
+		V:/Dateien/Klassen/Datenbanken/Klasse DB_Intervalle.html
+	 -->
+<!-- Dateipfad DIESER Datei :
+		V:/Dateien/Klassen/Datenbanken/
+-->
+<!-- Relativer Pfad zu Stylesheet.CSS:
+../../../
+-->
+
+<html lang="de-de" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Michael P&uuml;tz">
+	<BASE target="_self" />
+	<link rel="stylesheet" href="../../../stylesheet.css" type="text/css">
+	<title>Beschreibung</title>
+</head>
+<body>
+	<P align="center" id="hervorgehoben1a"><!-- Überschrift -->
+		<i>Klasse: </i>
+		<FONT size="7"> DB_Intervalle </FONT>
+	</P><!-- Überschrift ENDE -->
+	<P>&nbsp;</P>
+	<P align="left"><!-- Erklährung -->
+Diese Klasse ist eine (<i>STATISCHE</i>) Datenbank aller bekannten Intervalle.
+Sie kann also NICHT <b>instanziiert</b> werden.
+	</P><!-- Erklährung ENDE -->
+	<P align="left"><!-- öffentliche Schnittstellen -->
+		<table border="1"><!-- Tabelle: Schnittstellen -->
+			<colgroup>
+				<col width="195" valign="top">
+				<col width="540" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Schnittstellen: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/Klasse-DB_Intervalle_publ.png" 
+						alt="Klasse-DB_Intervalle" 
+						width="195" 
+						height="512">
+					<figcaption> Klasse-DB_Intervalle </figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3>öffentliche Schnittstellen:</h3>
+					<ul><!-- Datenverkehr -->
+						<strong>Eingabe:</strong>
+						<ul><!-- Eingabe -->
+						<li><span id="NameMethode">Konstruktor</span>() <i>(wird automatisch ausgeführt)</i>
+						</li>
+						<ul><!-- Konstruktor -->
+							<b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+							Die Daten werden durch private Methoden in die Datenbank gespeichert.
+						</ul><!-- Konstruktor ENDE -->
+						</ul><!-- Eingabe ENDE -->
+						<br>
+						-------------------------------------------------------------<br>
+						<br>
+						<strong>Ausgabe:</strong>
+						<ul><!-- Ausgabe -->
+						<li><strong>Eigenschaften:</strong></li>
+						<ol><!-- Eigenschaften -->
+								<li><!-- Eigenschaft: Anzahl -->
+									<span id="NameEigenschaft"> Anzahl </span>
+									<br>
+									<span id="Beschreibung"> gibt die Anzahl der Datensätze aus </span>
+									<br>
+									==> <i>TYP:<b> INT </b></i>
+								</li><!-- Eigenschaft: Anzahl ENDE -->
+								<li><!-- Eigenschaft: Name -->
+									<span id="NameEigenschaft"> Name </span>
+									<br>
+									<span id="Beschreibung"> gibt den Namen der Liste aus </span>
+									<br>
+									==> <i>TYP:<b> STRING </b></i>
+								</li><!-- Eigenschaft: Name ENDE -->
+								<li><!-- Eigenschaft: Typ -->
+									<span id="NameEigenschaft"> Typ </span>
+									<br>
+									<span id="Beschreibung"> gibt den Daten-Typ der Liste aus </span>
+									<br>
+									==> <i>TYP:<b> dType </b></i>
+								</li><!-- Eigenschaft: Typ ENDE -->
+						</ol><!-- Eigenschaften ENDE -->
+						<br>
+						<li><strong>Methoden:</strong></li>
+						<ol><!-- Methoden -->
+	
+								<li><!-- Methode: get(eIntervall id) -->
+									<span id="NameMethode"> get</span>(
+										<span id="Parameter"> id </span>
+										)
+									<br>
+									<span id="Beschreibung"> gibt einen Intervall-Datensatz aus </span>
+									<br>
+									<u>Parameter:</u>
+									<ol><!-- Parameter-Tabelle -->
+										<!-- Parameter: id -->
+											<li><span id="Parameter"> id </span><br>
+											<span id="Beschreibung"> ID des Intervall </span><br>
+											==> <i>TYP:<b> eIntervall </b></i>
+											</li><!-- Parameter: id ENDE -->
+									</ol>	<!-- Parameter-Tabelle ENDE -->
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE -->
+										<span id="Beschreibung"> Intervall-Datensatz </span><br>
+											==> <i>TYP:<b> ds_Intervall </b></i>
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: get(eIntervall id) ENDE -->
+								<br>
+								<li><!-- Methode: get(int id) -->
+									<span id="NameMethode">get</span>(
+										<span id="Parameter"> id </span>	)
+									<br>
+									<span id="Beschreibung"> gibt einen Intervall-Datensatz aus </span>
+									<br>
+									<u>Parameter:</u>
+									<ol><!-- Parameter-Tabelle -->
+										<!-- Parameter: id -->
+											<li><span id="Parameter"> id </span><br>
+											<span id="Beschreibung"> ID des Intervall </span><br>
+											==> <i>TYP:<b> INT </b></i>
+											</li><!-- Parameter: id ENDE -->
+									</ol>	<!-- Parameter-Tabelle ENDE -->
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE -->
+										<span id="Beschreibung"> Intervall-Datensatz </span><br>
+											==> <i>TYP:<b> ds_Intervall </b></i>
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: get(int id) ENDE -->
+						</ol><!-- Methoden ENDE -->
+						</ul><!-- Ausgabe ENDE -->
+					</ul><!-- Datenverkehr ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Schnittstellen: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Schnittstellen ENDE -->
+	</P><!-- öffentliche Schnittstellen ENDE -->
+	<br>
+	<br>
+	<P align="left"><!-- Interne Struktur -->
+		<table border="1"><!-- Tabelle: Intern -->
+			<colgroup>
+				<col width="341" valign="top">
+				<col width="540" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Intern: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/DB_Intervalle_verb.png" 
+						alt="DB_Intervalle"
+						width="341" 
+						height="312"
+					>
+					<figcaption> DB_Intervalle </figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3> Interne Struktur: </h3>
+
+					Die <b>VersionInfo</b> kann nur durch eine <b>spezielle Klasse</b> angezeigt werden.<br>
+					<ul><!-- INHALT -->
+						<li><strong>Attribute:</strong></li>
+						<ol><!-- Attribute -->
+							<li><!-- Attribut: _liste -->
+								<span id="NameAttribut"> _liste </span><br>
+								<span id="Beschreibung"> Liste der Intervalle </span><br>
+								==> <i>TYP:<b> List&lt;ds_Intervall&gt; </b></i><br>
+							</li><!-- Attribut: _liste ENDE -->
+						</ol><!-- Attribute ENDE -->
+						<br>
+						<li><span id="NameMethode">Konstruktor</span>() <i>(wird automatisch ausgeführt)</i>
+						</li>
+						<ul><!-- Konstruktor -->
+							<b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+							Die Daten werden durch private Methoden in die Datenbank gespeichert.
+						</ul><!-- Konstruktor ENDE -->
+						<br>
+						<li><strong>Eigenschaften:</strong></li>
+						<ol><!-- Eigenschaften -->
+								<li><!-- Eigenschaft: Anzahl -->
+									<span id="NameEigenschaft"> Anzahl </span>
+									<br>
+									<span id="Beschreibung"> gibt die Anzahl der Datensätze aus </span>
+									<br>
+									==> <i>TYP:<b> INT </b></i>
+								</li><!-- Eigenschaft: Anzahl ENDE -->
+								<li><!-- Eigenschaft: Name -->
+									<span id="NameEigenschaft"> Name </span>
+									<br>
+									<span id="Beschreibung"> gibt den Namen der Liste aus </span>
+									<br>
+									==> <i>TYP:<b> STRING </b></i>
+								</li><!-- Eigenschaft: Name ENDE -->
+								<li><!-- Eigenschaft: Typ -->
+									<span id="NameEigenschaft"> Typ </span>
+									<br>
+									<span id="Beschreibung"> gibt den Daten-Typ der Liste aus </span>
+									<br>
+									==> <i>TYP:<b> dType </b></i>
+								</li><!-- Eigenschaft: Typ ENDE -->
+						</ol><!-- Eigenschaften ENDE -->
+						<br>
+						<li><strong>Methoden:</strong></li>
+						<ol><!-- Methoden -->
+	
+								<li><!-- Methode: get(eIntervall id) -->
+									<span id="NameMethode"> get</span>(
+										<span id="Parameter"> id </span>
+										)
+									<br>
+									<span id="Beschreibung"> gibt einen Intervall-Datensatz aus </span>
+									<br>
+									<u>Parameter:</u>
+									<ol><!-- Parameter-Tabelle -->
+										<!-- Parameter: id -->
+											<li><span id="Parameter"> id </span><br>
+											<span id="Beschreibung"> ID des Intervall </span><br>
+											==> <i>TYP:<b> eIntervall </b></i>
+											</li><!-- Parameter: id ENDE -->
+									</ol>	<!-- Parameter-Tabelle ENDE -->
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE -->
+										<span id="Beschreibung"> Intervall-Datensatz </span><br>
+											==> <i>TYP:<b> ds_Intervall </b></i>
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: get(eIntervall id) ENDE -->
+								<br>
+								<li><!-- Methode: get(int id) -->
+									<span id="NameMethode">get</span>(
+										<span id="Parameter"> id </span>	)
+									<br>
+									<span id="Beschreibung"> gibt einen Intervall-Datensatz aus </span>
+									<br>
+									<u>Parameter:</u>
+									<ol><!-- Parameter-Tabelle -->
+										<!-- Parameter: id -->
+											<li><span id="Parameter"> id </span><br>
+											<span id="Beschreibung"> ID des Intervall </span><br>
+											==> <i>TYP:<b> INT </b></i>
+											</li><!-- Parameter: id ENDE -->
+									</ol>	<!-- Parameter-Tabelle ENDE -->
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE -->
+										<span id="Beschreibung"> Intervall-Datensatz </span><br>
+											==> <i>TYP:<b> ds_Intervall </b></i>
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: get(int id) ENDE -->
+						</ol><!-- Methoden ENDE -->
+						<br>
+					</ul><!-- INHALT ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Intern: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Intern ENDE -->
+	</P><!-- Interne Struktur ENDE -->
+	<br>
+	<br>
+	VERSIONEN:
+	<ol>
+		<b>Klasse:</b> 0.1.1
+		<li><b>Konstruktor:</b> 0.1.1</li>
+		<li><b>Eigenschaften:</b></li>
+		<ol>
+			<li>Anzahl: 0.1.1</li>
+			<li>Name: 0.1.1</li>
+			<li>Typ: 0.1.1</li>
+		</ol>
+		<li><b> Methoden:</b></li>
+		<ol>
+			<li>-get(eIntervall id): 0.1.1</li>
+			<li>-get(int id): 0.1.1</li>
+		</ol>
+	</ol>
+	<br>
+	<br>
+
+</body>
+</html>
+
+<!-- Version 0.1,
+	 Revision 1
+-->
+<!-- Editiert: 11.12.2016 13:32:02
+-->

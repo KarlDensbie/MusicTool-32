@@ -1,14 +1,49 @@
-﻿using System;
+﻿#define TEST
+/* genereller Schalter zum Testen 
+#undef TEST
+*/
+#define EINGABE
+/* eingegebene Werte anzeigen
+#undef EINGABE
+*/
+#define START
+/* Start bzw. Ende von Methoden anzeigen
+#undef START
+*/
+#define AUSGABE
+/* Ausgabe-Werte anzeigen
+#undef AUSGABE
+*/
+#define ZWISCHENWERTE
+/* Zwischenergebnisse anzeigen
+#undef ZWISCHENWERTE
+*/
+#define INFO
+/* diverse Informationen anzeigen
+#undef INFO
+*/
+#define INIT
+/* diverse Informationen anzeigen 
+#undef INIT
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using MusicTool;
+using MusicTool.Basisklassen;
+using MusicTool.Datenbanken;
+using MusicTool.Datenbanken.Datensätze;
+using MusicTool.Eingabe;
+using MusicTool.Fenster;
+using MusicTool.Fenster.Testanzeigen;
 
 namespace MusicTool.Basisklassen
 {
-	/// <summary> Klasse       : bcl_Basisdata2
-	/// <para>Basisklasse für alle Datensätze mit 2 Namen</para>
+	/// <summary> Klasse       : bcl_Basisdata
+	/// <para>Basisklasse für alle Datensätze mit 1 Namen</para>
 	/// .
 	/// <para>    Programmierer    : Michael Pütz</para>
 	/// <para>    getestet am      : </para>
@@ -22,39 +57,42 @@ namespace MusicTool.Basisklassen
 		private static dType zz_datenTyp = dType.Basisdaten;
 		private static string zz_hauptversion= "0";
 		private static string zz_nebenversion= "1";
-		private static string zz_revision= "3";
-		private static string zz_letzteBearbeitung= "2016-11-11  12:31:24";
+		private static string zz_revision= "5";
+		private static string zz_letzteBearbeitung= "2016-12-17  14:17:46";
 		private static string zz_ersteBearbeitung= "2016-11-06 12:35.35";
 		private static string zz_getestet= "";
 		#region VersionInfoEigenschaften
-		/// <summary> Eigenschaft: zz_KlassenName
-		/// <para>gibt den Namen der Klasse aus</para>
-		/// <para>TYP: STRING</para>
+
+		/// <summary> Methode: VersionInfo()
+		/// <para>gibt Infos zur Version aus</para>
+		/// </summary>
+		/// <returns>Versions-Infos</returns>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
 		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:31:43</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:31:43</para>
+		/// <para>    letzteBearbeitung: 2016-11-23  18:30:44</para>
+		/// <para>    ersteBearbeitung : 2016-11-23  18:30:44</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_KlassenName { get { return zz_klassenName; } }
-		/// <summary> Eigenschaft: zz_Namespace
-		/// <para>gibt den Namespace der Klasse aus</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:32:38</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:32:38</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_Namespace { get { return zz_namespace; } }
+		/// </remarks>
+		public static string VersionInfo()
+		{
+			string ausgabe = "";
+			string neueZeile = "/n";
+			ausgabe += zz_klassenName + neueZeile;
+			ausgabe += zz_namespace + neueZeile;
+			ausgabe += zz_datenTyp.ToString() + neueZeile;
+			ausgabe += zz_getestet + neueZeile;
+			ausgabe += zz_Pfad + neueZeile;
+			ausgabe += zz_VersionInfo + neueZeile;
+			ausgabe += zz_letzteBearbeitung + neueZeile;
+			ausgabe += zz_ersteBearbeitung + neueZeile;
+			ausgabe += "---------------------------------" + neueZeile;
+			return ausgabe;
+		}
 		/// <summary> Eigenschaft: zz_Pfad
 		/// <para>gibt den Pfad (Namespace + Klassenname) aus</para>
 		/// <para>TYP: STRING</para>
@@ -68,7 +106,7 @@ namespace MusicTool.Basisklassen
 		/// .
 		/// <para>    getestet am      : </para>
 		/// </summary>
-		public static string zz_Pfad { get { return zz_namespace + "." + zz_klassenName; } }
+		private static string zz_Pfad { get { return zz_namespace + "." + zz_klassenName; } }
 		/// <summary> Eigenschaft: zz_VersionInfo
 		/// <para>gibt die Version der Klasse aus</para>
 		/// <para>TYP: STRING</para>
@@ -82,69 +120,13 @@ namespace MusicTool.Basisklassen
 		/// .
 		/// <para>    getestet am      : </para>
 		/// </summary>
-		public static string zz_VersionInfo
+		private static string zz_VersionInfo
 		{
 			get {
 				return "Version: " + zz_hauptversion + "." + zz_nebenversion +
 			  ", Revision: " + zz_revision;
 			}
 		}
-		/// <summary> Eigenschaft: zz_AktBearbeitung
-		/// <para>gibt das Datum der letzten Bearbeitung der Klasse aus</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:35:45</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:35:45</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_AktBearbeitung { get { return zz_letzteBearbeitung; } }
-		/// <summary> Eigenschaft: zz_BearbeitungsBeginn
-		/// <para>gibt aus, ab wann diese Klasse programmiert wurde</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:36:44</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:36:44</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_BearbeitungsBeginn { get { return zz_ersteBearbeitung; } }
-		/// <summary> Eigenschaft: zz_DatenTyp
-		/// <para>gibt den Datentyp der Klasse aus</para>
-		/// <para>TYP: dType</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:37:35</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:37:35</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static dType zz_DatenTyp { get { return zz_datenTyp; } }
-		/// <summary> Eigenschaft: zz_Getestet
-		/// <para>gibt aus, wann die Klasse getestet wurde</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:43:07</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:43:07</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_Getestet { get { return zz_getestet; } }
 		#endregion VersionInfoEigenschaften
 
 		#endregion VersionInfo
@@ -157,74 +139,104 @@ namespace MusicTool.Basisklassen
 		private dType _typ;
 
 		/// <summary>_name
-		/// <para>Name des Objekts</para>
+		/// <para>lbl_Name des Objekts</para>
 		/// <para>TYP: STRING</para>
 		/// </summary>
 		private string _name;
 
 		/// <summary>_altName
-		/// <para>alternativer Name des Objekts</para>
+		/// <para>alternativer lbl_Name des Objekts</para>
 		/// <para>TYP: STRING</para>
 		/// </summary>
 		private string _altName;
 
-		/// <summary>_index
-		/// <para>Index des Objekts</para>
+		/// <summary>_id
+		/// <para>ID des Objekts</para>
 		/// <para>TYP: INT</para>
 		/// </summary>
-		private int _index;
+		private int _id;
+
+		private string KLASSE = "Basisklassen.bcl_Basisdata2";
 
 		#endregion Attribute
 
 		#region Konstruktor
 
-		/// <summary> Konstruktor(name,name2,idx,typ)
-		/// <para>initialisiert die Instanz</para>
+		/// <summary> Konstruktor(name,altName,id,typ)
+		/// <para>instantiiert die Instanz</para>
+		/// </summary>
+		/// <param name="name">lbl_Name des Objekts, TYP: <b><i>STRING</i></b></param>
+		/// <param name="altName">alternativer lbl_Name des Objekts, TYP: <b><i>STRING</i></b></param>
+		/// <param name="id">ID des Objekts, TYP: <b><i>INT</i></b></param>
+		/// <param name="typ">Datentyp des Objekts, TYP: <b><i>dType</i></b></param>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 3
-		/// <para>    letzteBearbeitung: 2016-11-11  12:28:11</para>
+		///           Revision         : 4
+		/// <para>    letzteBearbeitung: 2016-12-17  14:17:25</para>
 		/// <para>    ersteBearbeitung : 2016-11-06  12:46:24</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
-		/// <param name="name">Name des Objekts, TYP: STRING</param>
-		/// <param name="altName">alternativer Name des Objekts, TYP: STRING</param>
-		/// <param name="idx">Index des Objekts, TYP: INT</param>
-		/// <param name="typ">Datentyp des Objekts, TYP: dType</param>
-		public bcl_Basisdata2( string name , string altName , int idx ,dType typ )
+		/// </remarks>
+		public bcl_Basisdata2( string name , string altName , int id , dType typ )
 		{
+			#region DEBUG_INFO
+#if TEST
+			string MethodenName =KLASSE+"(name,altName,id,typ)";
+#if INIT
+			wnd_StatusOn ein = new wnd_StatusOn( MethodenName );
+#endif //INIT
+#if EINGABE
+			Anz_Basisdata info = new Anz_Basisdata(MethodenName, name,altName,typ,id );
+#endif //EINGABE
+
+#endif //TEST
+			#endregion DEBUG_INFO
 			_name = name;
 			_altName = altName;
-			_index = idx;
+			_id = id;
 			_typ = typ;
+			#region DEBUG_INFO
+#if TEST
+#if INIT
+			wnd_StatusOff aus = new Fenster.Testanzeigen.wnd_StatusOff( MethodenName );
+#endif //INIT
+
+#endif //TEST
+			#endregion DEBUG_INFO
 		}
 
 		#endregion Konstruktor
 
 		#region Eigenschaften
 
-		/// <summary> Eigenschaft: Index
-		/// <para>gibt den Index des Objekts aus</para>
-		/// <para>TYP: INT</para>
+		/// <summary> Eigenschaft: ID
+		/// <para>gibt die ID des Objekts aus</para>
+		/// <para></para>
+		/// TYP: <b><i>INT</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
 		///           Revision         : 2
-		/// <para>    letzteBearbeitung: 2016-11-11  12:28:54</para>
+		/// <para>    letzteBearbeitung: 2016-11-24  12:43:28</para>
 		/// <para>    ersteBearbeitung : 2016-11-06  12:50:10</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
-		public int Index { get { return _index; } }
+		/// </remarks>
+		public int ID { get { return _id; } }
 
-		/// <summary> Eigenschaft: Name
+		/// <summary> Eigenschaft: lbl_Name
 		/// <para>gibt den Namen des Objekts aus</para>
-		/// <para>TYP: STRING</para>
+		/// <para></para>
+		/// TYP: <b><i>STRING</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -233,13 +245,16 @@ namespace MusicTool.Basisklassen
 		/// <para>    ersteBearbeitung : 2016-11-06  12:51:49</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
+		/// </remarks>
 		public string Name { get { return _name; } }
 
 		/// <summary> Eigenschaft: AltName
 		/// <para>gibt den alternativen Namen des Objekts aus</para>
-		/// <para>TYP: STRING</para>
+		/// <para></para>
+		/// TYP: <b><i>STRING</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -248,13 +263,16 @@ namespace MusicTool.Basisklassen
 		/// <para>    ersteBearbeitung : 2016-11-06  12:51:49</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
+		/// </remarks>
 		public string AltName { get { return _altName; } }
 
 		/// <summary> Eigenschaft: Typ
 		/// <para>gibt den Datentyp des Objekts aus</para>
-		/// <para>TYP: dType</para>
+		/// <para></para>
+		/// TYP: <b><i>dType</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -263,7 +281,7 @@ namespace MusicTool.Basisklassen
 		/// <para>    ersteBearbeitung : 2016-11-06  17:13:43</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
+		/// </remarks>
 		public dType Typ { get { return _typ; } }
 
 		#endregion Eigenschaften

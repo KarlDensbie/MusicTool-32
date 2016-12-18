@@ -1,9 +1,44 @@
-﻿using System;
+﻿#define TEST
+/* genereller Schalter zum Testen 
+#undef TEST
+*/
+#define EINGABE
+/* eingegebene Werte anzeigen
+#undef EINGABE
+*/
+#define START
+/* Start bzw. Ende von Methoden anzeigen 
+#undef START
+*/
+#define AUSGABE
+/* Ausgabe-Werte anzeigen
+#undef AUSGABE
+*/
+#define ZWISCHENWERTE
+/* Zwischenergebnisse anzeigen
+#undef ZWISCHENWERTE
+*/
+#define INFO
+/* diverse Informationen anzeigen
+#undef INFO
+*/
+#define INIT
+/* diverse Informationen anzeigen 
+#undef INIT
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using MusicTool;
+using MusicTool.Basisklassen;
+using MusicTool.Datenbanken;
+using MusicTool.Datenbanken.Datensätze;
+using MusicTool.Eingabe;
+using MusicTool.Fenster;
+using MusicTool.Fenster.Testanzeigen;
 
 namespace MusicTool.Basisklassen
 {
@@ -13,6 +48,12 @@ namespace MusicTool.Basisklassen
 	/// <para>    Programmierer    : Michael Pütz</para>
 	/// <para>    getestet am      : </para>
 	/// </summary>
+	/// <remarks> Getestet:
+	/// <para>Konstruktor - getestet am      : 2016-12-14  19:24:23</para>
+	/// <para>Name - getestet am      : 2016-12-14  19:24:23</para>
+	/// <para>ID - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>Typ - getestet am      : 2016-12-14  20:23:30</para>
+	/// </remarks>
 	public class bcl_Basisdata
 	{
 		#region VersionInfo
@@ -22,39 +63,41 @@ namespace MusicTool.Basisklassen
 		private static dType zz_datenTyp = dType.Basisdaten;
 		private static string zz_hauptversion= "0";
 		private static string zz_nebenversion= "1";
-		private static string zz_revision= "2";
-		private static string zz_letzteBearbeitung= "2016-11-11  12:21:33";
+		private static string zz_revision= "4";
+		private static string zz_letzteBearbeitung= "2016-12-17  14:16:13";
 		private static string zz_ersteBearbeitung= "2016-11-06 12:35.35";
 		private static string zz_getestet= "";
 		#region VersionInfoEigenschaften
-		/// <summary> Eigenschaft: zz_KlassenName
-		/// <para>gibt den Namen der Klasse aus</para>
-		/// <para>TYP: STRING</para>
+		/// <summary> Methode: VersionInfo()
+		/// <para>gibt Infos zur Version aus</para>
+		/// </summary>
+		/// <returns>Versions-Infos</returns>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
 		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:31:43</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:31:43</para>
+		/// <para>    letzteBearbeitung: 2016-11-23  18:30:44</para>
+		/// <para>    ersteBearbeitung : 2016-11-23  18:30:44</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_KlassenName { get { return zz_klassenName; } }
-		/// <summary> Eigenschaft: zz_Namespace
-		/// <para>gibt den Namespace der Klasse aus</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:32:38</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:32:38</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_Namespace { get { return zz_namespace; } }
+		/// </remarks>
+		public static string VersionInfo()
+		{
+			string ausgabe = "";
+			string neueZeile = "/n";
+			ausgabe += zz_klassenName + neueZeile;
+			ausgabe += zz_namespace + neueZeile;
+			ausgabe += zz_datenTyp.ToString() + neueZeile;
+			ausgabe += zz_getestet + neueZeile;
+			ausgabe += zz_Pfad + neueZeile;
+			ausgabe += zz_VersionInfo + neueZeile;
+			ausgabe += zz_letzteBearbeitung + neueZeile;
+			ausgabe += zz_ersteBearbeitung + neueZeile;
+			ausgabe += "---------------------------------" + neueZeile;
+			return ausgabe;
+		}
 		/// <summary> Eigenschaft: zz_Pfad
 		/// <para>gibt den Pfad (Namespace + Klassenname) aus</para>
 		/// <para>TYP: STRING</para>
@@ -68,7 +111,7 @@ namespace MusicTool.Basisklassen
 		/// .
 		/// <para>    getestet am      : </para>
 		/// </summary>
-		public static string zz_Pfad { get { return zz_namespace + "." + zz_klassenName; } }
+		private static string zz_Pfad { get { return zz_namespace + "." + zz_klassenName; } }
 		/// <summary> Eigenschaft: zz_VersionInfo
 		/// <para>gibt die Version der Klasse aus</para>
 		/// <para>TYP: STRING</para>
@@ -82,140 +125,121 @@ namespace MusicTool.Basisklassen
 		/// .
 		/// <para>    getestet am      : </para>
 		/// </summary>
-		public static string zz_VersionInfo
+		private static string zz_VersionInfo
 		{
 			get {
 				return "Version: " + zz_hauptversion + "." + zz_nebenversion +
 			  ", Revision: " + zz_revision;
 			}
 		}
-		/// <summary> Eigenschaft: zz_AktBearbeitung
-		/// <para>gibt das Datum der letzten Bearbeitung der Klasse aus</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:35:45</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:35:45</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_AktBearbeitung { get { return zz_letzteBearbeitung; } }
-		/// <summary> Eigenschaft: zz_BearbeitungsBeginn
-		/// <para>gibt aus, ab wann diese Klasse programmiert wurde</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:36:44</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:36:44</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_BearbeitungsBeginn { get { return zz_ersteBearbeitung; } }
-		/// <summary> Eigenschaft: zz_DatenTyp
-		/// <para>gibt den Datentyp der Klasse aus</para>
-		/// <para>TYP: dType</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:37:35</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:37:35</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static dType zz_DatenTyp { get { return zz_datenTyp; } }
-		/// <summary> Eigenschaft: zz_Getestet
-		/// <para>gibt aus, wann die Klasse getestet wurde</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:43:07</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:43:07</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static string zz_Getestet { get { return zz_getestet; } }
 		#endregion VersionInfoEigenschaften
 
 		#endregion VersionInfo
 
 		#region Attribute
 		/// <summary>_name
-		/// <para>Name des Objekts</para>
-		/// <para>TYP: STRING</para>
+		/// <para>lbl_Name der Instanz</para>
+		/// <para></para>
+		/// TYP: <b><i>STRING</i></b>
 		/// </summary>
 		private string _name;
 
-		/// <summary>_index
-		/// <para>Index des Objekts</para>
-		/// <para>TYP: INT</para>
+		/// <summary>_id
+		/// <para>ID der Instanz</para>
+		/// <para></para>
+		/// TYP: <b><i>INT</i></b>
 		/// </summary>
-		private int _index;
+		private int _id;
 
 		/// <summary>_typ
-		/// <para>Typ der Klasse</para>
+		/// <para>Datentyp der Instanz</para>
+		/// <para></para>
+		/// TYP: <b><i>dType</i></b>
 		/// </summary>
 		private dType _typ;
+
+		private string KLASSE = "Basisklassen.bcl_Basisdata";
 
 		#endregion Attribute
 
 		#region Konstruktor
 
-		/// <summary> Konstruktor(name, typ,idx)
-		/// <para>initialisiert die Instanz</para>
+		/// <summary> Konstruktor(name, typ,id)
+		/// <para>instanziiert die Instanz</para>
+		/// </summary>
+		/// <param name="name">lbl_Name des Objekts, TYP: <b><i>STRING</i></b></param>
+		/// <param name="typ">Typ der Klasse, TYP: <b><i>dType</i></b></param>
+		/// <param name="id">ID des Objekts, TYP: <b><i>INT</i></b></param>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 2
-		/// <para>    letzteBearbeitung: 2016-11-11  12:21:05</para>
+		///           Revision         : 4
+		/// <para>    letzteBearbeitung: 2016-12-17  14:15:58</para>
 		/// <para>    ersteBearbeitung : 2016-11-06  12:46:24</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
-		/// <param name="name">Name des Objekts, TYP: STRING</param>
-		/// <param name="typ">Typ der Klasse, TYP: dType</param>
-		/// <param name="idx">Index des Objekts, TYP: INT</param>
-		public bcl_Basisdata( string name , dType typ , int idx )
+		/// </remarks>
+		public bcl_Basisdata( string name , dType typ , int id )
 		{
+			#region DEBUG_INFO
+#if TEST
+			string MethodenName =KLASSE+"(name, typ,id)";
+#if INIT
+			wnd_StatusOn ein = new wnd_StatusOn( MethodenName );
+#endif //INIT
+#if EINGABE
+			Anz_Basisdata info = new Anz_Basisdata(MethodenName, name,typ,id );
+#endif //EINGABE
+
+#endif //TEST
+			#endregion DEBUG_INFO
 			_name = name;
 			_typ = typ;
-			_index = idx;
+			_id = id;
+			#region DEBUG_INFO
+#if TEST
+#if INIT
+			wnd_StatusOff aus = new wnd_StatusOff( MethodenName );
+#endif //INIT
+
+#endif //TEST
+			#endregion DEBUG_INFO
 		}
 
 		#endregion Konstruktor
 
 		#region Eigenschaften
 
-		/// <summary> Eigenschaft: Index
-		/// <para>gibt den Index des Objekts aus</para>
-		/// <para>TYP: INT</para>
+		/// <summary> Eigenschaft: ID
+		/// <para>gibt die ID der Instanz aus</para>
+		/// <para></para>
+		/// TYP: <b><i>INT</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
 		///           Revision         : 2
-		/// <para>    letzteBearbeitung: 2016-11-11  12:20:47</para>
+		/// <para>    letzteBearbeitung: 2016-11-24  13:16:48</para>
 		/// <para>    ersteBearbeitung : 2016-11-06  12:50:10</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public int Index { get { return _index; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public int ID
+		{
+			get { return _id; }
+		}
 
 		/// <summary> Eigenschaft: Typ
 		/// <para>gibt den Typ des Datensatzes aus</para>
-		/// <para>TYP: dType</para>
+		/// <para></para>
+		/// TYP: <b><i>dType</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -223,14 +247,20 @@ namespace MusicTool.Basisklassen
 		/// <para>    letzteBearbeitung: 2016-11-06  15:52:41</para>
 		/// <para>    ersteBearbeitung : 2016-11-06  15:52:41</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public dType Typ { get { return _typ; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public dType Typ
+		{
+			get { return _typ; }
+		}
 
 		/// <summary> Eigenschaft: Name
 		/// <para>gibt den Namen des Objekts aus</para>
-		/// <para>TYP: STRING</para>
+		/// <para></para>
+		/// TYP: <b><i>STRING</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -238,11 +268,13 @@ namespace MusicTool.Basisklassen
 		/// <para>    letzteBearbeitung: 2016-11-06  12:51:49</para>
 		/// <para>    ersteBearbeitung : 2016-11-06  12:51:49</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public string Name { get { return _name; } }
+		/// <para>    getestet am      : 2016-12-14  19:24:23</para>
+		/// </remarks>
+		public string Name
+		{
+			get { return _name; }
+		}
 
 		#endregion Eigenschaften
-
 	}
 }

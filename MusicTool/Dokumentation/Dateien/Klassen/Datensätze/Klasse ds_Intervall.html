@@ -1,0 +1,352 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Adresse der Datei:
+		V:/Dateien/Klassen/Datensätze/Klasse ds_Intervall.html
+	 -->
+<!-- Dateipfad DIESER Datei :
+		V:/Dateien/Klassen/Datensätze/
+-->
+<!-- Relativer Pfad zu Stylesheet.CSS:
+../../../
+-->
+
+<html lang="de-de" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Michael P&uuml;tz">
+	<BASE target="_self" />
+	<link rel="stylesheet" href="../../../stylesheet.css" type="text/css">
+	<title>Beschreibung</title>
+</head>
+<body>
+	<P align="center" id="hervorgehoben1a"><!-- Überschrift -->
+		<i>Klasse: </i>
+		<FONT size="7"> ds_Intervall </FONT>
+	</P><!-- Überschrift ENDE -->
+	<P>&nbsp;</P>
+	<P align="left"><!-- Erklährung -->
+		ABGELEITET VON: <span id="Ableitung"> bcl_Basisdata2 </span>
+		<BR>
+Diese Klasse ist ein Datensatz für die Datenbank 
+<span id="NameKlasse">DB_Intervalle</span>.<BR>
+Der Datensatz kann von allen Klassen ausgewertet werden. 
+Er kann auch über die Basisklasse <span id="NameKlasse"> bcl_Basisdata2 </span>
+angesprochen werden.<BR>
+Als Typ wird der Typ <span id="hervorgehoben2c"> Intervalldaten </span> gespeichert.
+	</P><!-- Erklährung ENDE -->
+	<P align="left"><!-- Aufruf -->
+		<i>Aufruf: </i>
+		<span id="Aufruf">
+			<span id="NameKlasse"> ds_Intervall </span>
+			(
+				<span id="Parameter"> name </span> , 
+				<span id="Parameter"> altName </span> , 
+				<span id="Parameter"> id </span> , 
+				<span id="Parameter"> basisIntervall </span>
+			)
+		</span>
+	</P><!-- Aufruf ENDE -->
+	<P align="left"><!-- öffentliche Schnittstellen -->
+		<table border="1"><!-- Tabelle: Schnittstellen -->
+			<colgroup>
+				<col width="195" valign="top">
+				<col width="540" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Schnittstellen: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/Klasse-ds_Intervall.png" 
+						alt="Klasse-ds_Intervall" 
+						width="195" 
+						height="512">
+					<figcaption>Klasse-ds_Intervall</figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3>öffentliche Schnittstellen:</h3>
+					<ul><!-- Datenverkehr -->
+						<strong>Eingabe:</strong>
+						<ul><!-- Eingabe -->
+							<li><span id="NameMethode"> Konstruktor</span>(
+								<span id="Parameter"> name </span> , 
+								<span id="Parameter"> altName </span> , 
+								<span id="Parameter"> id </span> , 
+								<span id="Parameter"> basisIntervall </span>
+								)
+							</li>
+							<ul><!-- Konstruktor -->
+								<b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+								Die Parameter
+								<ul><!-- Liste -->
+									<li><span id="Parameter">name</span> , </li>
+									<li><span id="Parameter">altName</span> , </li>
+									<li><span id="Parameter">id</span> (als <i>INT</i>) und </li>
+									<li><span id="Parameter">typ</span> = dType.Intervalldaten</li>
+								</ul><!-- Liste ENDE -->
+								werden an die Basisklasse <span id="NameKlasse">bcl_Basisdata</span> übergeben.
+								<li>Folgende Daten werden gespeichert:<br>
+									<ol><!-- Tabelle -->
+										<li><!-- Parameter: id -->
+											<span id="Parameter"> id </span> 
+											==> <span id="Beschreibung"> ID des Intervalls in der Datenbank DB_Intervalle </span><br>
+											==> <i>TYP:<b> eIntervall </b></i>
+										</li><!-- Parameter: id ENDE -->
+										<li><!-- Parameter: basisIntervall -->
+											<span id="Parameter"> basisIntervall </span> 
+											==> <span id="Beschreibung"> Basis-Intervall </span><br>
+											==> <i>TYP:<b> eBasisIntervall </b></i>
+										</li><!-- Parameter: basisIntervall ENDE -->
+									</ol><!-- Tabelle ENDE -->
+								</li>
+							</ul><!-- Konstruktor ENDE -->
+						</ul><!-- Eingabe ENDE -->
+						<br>
+						-------------------------------------------------------------<br>
+						<br>
+						<strong>Ausgabe:</strong>
+						<ul><!-- Ausgabe -->
+						<li><strong>Eigenschaften:</strong></li>
+						<ol><!-- Eigenschaften -->
+							<li><!-- Eigenschaft: IntervallName -->
+								<span id="NameEigenschaft"> IntervallName </span>
+								<br>
+								<span id="Beschreibung"> gibt den Intervall-Namen aus </span>
+								<br>
+								==> <i>TYP:<b> STRING </b></i>
+							</li><!-- Eigenschaft: IntervallName ENDE -->
+							<li><!-- Eigenschaft: AltIntervallName -->
+								<span id="NameEigenschaft"> AltIntervallName </span>
+								<br>
+								<span id="Beschreibung"> gibt den alternativen Intervall-Namen aus </span>
+								<br>
+								==> <i>TYP:<b> STRING </b></i>
+							</li><!-- Eigenschaft: AltIntervallName ENDE -->
+							<li><!-- Eigenschaft: IntervallID -->
+								<span id="NameEigenschaft"> IntervallID </span>
+								<br>
+								<span id="Beschreibung"> gibt die IntervallID aus </span>
+								<br>
+								==> <i>TYP:<b> eIntervall </b></i>
+							</li><!-- Eigenschaft: IntervallID ENDE -->
+							<li><!-- Eigenschaft: BasisIntervall -->
+								<span id="NameEigenschaft"> BasisIntervall </span>
+								<br>
+								<span id="Beschreibung"> gibt das BasisIntervall aus </span>
+								<br>
+								==> <i>TYP:<b> eBasisIntervall </b></i>
+							</li><!-- Eigenschaft: BasisIntervall ENDE -->
+							<li><!-- Eigenschaft: IntBasisIntervall -->
+								<span id="NameEigenschaft"> IntBasisIntervall </span>
+								<br>
+								<span id="Beschreibung"> gibt das BasisIntervall als INT aus </span>
+								<br>
+								==> <i>TYP:<b> INT </b></i>
+							</li><!-- Eigenschaft: IntBasisIntervall ENDE -->
+							<br>
+							<li><strong>geerbte Eigenschaften:</strong></li>
+							<ol><!-- geerbte Eigenschaften -->
+								<li><!-- Eigenschaft: ID -->
+									<span id="NameEigenschaft">ID</span>
+									<br>
+									<span id="Beschreibung">gibt die ID des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> INT</b></i>
+								</li><!-- Eigenschaft: ID ENDE -->
+								<li><!-- Eigenschaft: Typ -->
+									<span id="NameEigenschaft">Typ</span>
+									<br>
+									<span id="Beschreibung">gibt den Datentyp des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> dType</b></i>
+								</li><!-- Eigenschaft: Typ ENDE -->
+								<li><!-- Eigenschaft: AltName -->
+									<span id="NameEigenschaft">AltName</span>
+									<br>
+									<span id="Beschreibung">gibt den alternativen Namen des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> STRING</b></i>
+								</li><!-- Eigenschaft: AltName ENDE -->
+								<li><!-- Eigenschaft: Name -->
+									<span id="NameEigenschaft">Name</span>
+									<br>
+									<span id="Beschreibung">gibt den Namen des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> STRING</b></i>
+								</li><!-- Eigenschaft: Name ENDE -->
+							</ol><!-- geerbte Eigenschaften ENDE -->
+						</ol><!-- Eigenschaften ENDE -->
+						<br>
+						</ul><!-- Ausgabe ENDE -->
+					</ul><!-- Datenverkehr ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Schnittstellen: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Schnittstellen ENDE -->
+	</P><!-- öffentliche Schnittstellen ENDE -->
+	<br>
+	<br>
+	<P align="left"><!-- Interne Struktur -->
+		<table border="1"><!-- Tabelle: Intern -->
+			<colgroup>
+				<col width="472" valign="top">
+				<col width="540" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Intern: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/ds_Intervall_verb.png" 
+						alt="ds_Intervall"
+						width="472" 
+						height="678"
+					>
+					<figcaption> ds_Intervall </figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3> Interne Struktur: </h3>
+
+					Die <b>VersionInfo</b> kann nur durch eine <b>spezielle Klasse</b> angezeigt werden.<br>
+					<ul><!-- INHALT -->
+						<li><strong>Attribute:</strong></li>
+						<ol><!-- Attribute -->
+							<li><!-- Attribut: _intervallID -->
+								<span id="NameAttribut"> _intervallID </span><br>
+								<span id="Beschreibung"> ID des Intervalls </span><br>
+								==> <i>TYP:<b> eIntervall </b></i><br>
+							</li><!-- Attribut: _intervallID ENDE -->
+							<li><!-- Attribut: _basisIntervall -->
+								<span id="NameAttribut"> _basisIntervall </span><br>
+								<span id="Beschreibung"> Basis-Intervall </span><br>
+								==> <i>TYP:<b> eBasisIntervall </b></i><br>
+							</li><!-- Attribut: _basisIntervall ENDE -->
+						</ol><!-- Attribute ENDE -->
+						<br>
+						<li><span id="NameMethode"> Konstruktor</span>(
+							<span id="Parameter"> name </span> , 
+							<span id="Parameter"> altName </span> , 
+							<span id="Parameter"> id </span> , 
+							<span id="Parameter"> basisIntervall </span>
+							)
+						</li>
+						<ul><!-- Konstruktor -->
+							<b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+							Die Parameter
+							<ul><!-- Liste -->
+								<li><span id="Parameter">name</span> , </li>
+								<li><span id="Parameter">altName</span> , </li>
+								<li><span id="Parameter">id</span> (als <i>INT</i>) und </li>
+								<li><span id="Parameter">typ</span> = dType.Intervalldaten</li>
+							</ul><!-- Liste ENDE -->
+							werden an die Basisklasse <span id="NameKlasse">bcl_Basisdata</span> übergeben.
+							<li>Folgende Daten werden gespeichert:<br>
+								<ol><!-- Tabelle -->
+									<li><!-- Parameter: id -->
+										<span id="Parameter"> id </span> 
+										==> <span id="Beschreibung"> ID des Intervalls in der Datenbank DB_Intervalle </span><br>
+										==> <i>TYP:<b> eIntervall </b></i>
+									</li><!-- Parameter: id ENDE -->
+									<li><!-- Parameter: basisIntervall -->
+										<span id="Parameter"> basisIntervall </span> 
+										==> <span id="Beschreibung"> Basis-Intervall </span><br>
+										==> <i>TYP:<b> eBasisIntervall </b></i>
+									</li><!-- Parameter: basisIntervall ENDE -->
+								</ol><!-- Tabelle ENDE -->
+							</li>
+						</ul><!-- Konstruktor ENDE -->
+						<br>
+						<li><strong>Eigenschaften:</strong></li>
+						<ol><!-- Eigenschaften -->
+							<li><!-- Eigenschaft: IntervallName -->
+								<span id="NameEigenschaft"> IntervallName </span>
+								<br>
+								<span id="Beschreibung"> gibt den Intervall-Namen aus </span>
+								<br>
+								==> <i>TYP:<b> STRING </b></i>
+							</li><!-- Eigenschaft: IntervallName ENDE -->
+							<li><!-- Eigenschaft: AltIntervallName -->
+								<span id="NameEigenschaft"> AltIntervallName </span>
+								<br>
+								<span id="Beschreibung"> gibt den alternativen Intervall-Namen aus </span>
+								<br>
+								==> <i>TYP:<b> STRING </b></i>
+							</li><!-- Eigenschaft: AltIntervallName ENDE -->
+							<li><!-- Eigenschaft: IntervallID -->
+								<span id="NameEigenschaft"> IntervallID </span>
+								<br>
+								<span id="Beschreibung"> gibt die IntervallID aus </span>
+								<br>
+								==> <i>TYP:<b> eIntervall </b></i>
+							</li><!-- Eigenschaft: IntervallID ENDE -->
+							<li><!-- Eigenschaft: BasisIntervall -->
+								<span id="NameEigenschaft"> BasisIntervall </span>
+								<br>
+								<span id="Beschreibung"> gibt das BasisIntervall aus </span>
+								<br>
+								==> <i>TYP:<b> eBasisIntervall </b></i>
+							</li><!-- Eigenschaft: BasisIntervall ENDE -->
+							<li><!-- Eigenschaft: IntBasisIntervall -->
+								<span id="NameEigenschaft"> IntBasisIntervall </span>
+								<br>
+								<span id="Beschreibung"> gibt das BasisIntervall als INT aus </span>
+								<br>
+								==> <i>TYP:<b> INT </b></i>
+							</li><!-- Eigenschaft: IntBasisIntervall ENDE -->
+							<br>
+							<li><strong>geerbte Eigenschaften:</strong></li>
+							<ol><!-- geerbte Eigenschaften -->
+								<li><!-- Eigenschaft: ID -->
+									<span id="NameEigenschaft">ID</span>
+									<br>
+									<span id="Beschreibung">gibt die ID des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> INT</b></i>
+								</li><!-- Eigenschaft: ID ENDE -->
+								<li><!-- Eigenschaft: Typ -->
+									<span id="NameEigenschaft">Typ</span>
+									<br>
+									<span id="Beschreibung">gibt den Datentyp des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> dType</b></i>
+								</li><!-- Eigenschaft: Typ ENDE -->
+								<li><!-- Eigenschaft: AltName -->
+									<span id="NameEigenschaft">AltName</span>
+									<br>
+									<span id="Beschreibung">gibt den alternativen Namen des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> STRING</b></i>
+								</li><!-- Eigenschaft: AltName ENDE -->
+								<li><!-- Eigenschaft: Name -->
+									<span id="NameEigenschaft">Name</span>
+									<br>
+									<span id="Beschreibung">gibt den Namen des Objekts aus</span>
+									<br>
+									==> <i>TYP:<b> STRING</b></i>
+								</li><!-- Eigenschaft: Name ENDE -->
+							</ol><!-- geerbte Eigenschaften ENDE -->
+						</ol><!-- Eigenschaften ENDE -->
+						<br>
+					</ul><!-- INHALT ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Intern: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Intern ENDE -->
+	</P><!-- Interne Struktur ENDE -->
+	<br>
+	<br>
+	VERSIONEN:
+	<ol>
+		<b>Klasse:</b> 0.1.1
+		<li><b>Konstruktor:</b> 0.1.1</li>
+		<li><b>Eigenschaften:</b></li>
+		<ol>
+			<li>IntervallName: 0.1.1</li>
+			<li>AltIntervallName: 0.1.1</li>
+			<li>IntervallID: 0.1.1</li>
+			<li>BasisIntervall: 0.1.1</li>
+			<li>IntBasisIntervall: 0.1.1</li>
+		</ol>
+	</ol>
+	<br>
+	<br>
+
+</body>
+</html>
+
+<!-- Version 0.1,
+	 Revision 1
+-->
+<!-- Editiert: 10.12.2016 18:14:50
+-->

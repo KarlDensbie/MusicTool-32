@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -72,16 +72,116 @@
     <Compile Include="Basisklassen\bcl_BasisListe2.cs" />
     <Compile Include="Datenbanken\Datensätze\ds_Ton.cs" />
     <Compile Include="Datenbanken\Datensätze\ds_Intervall.cs" />
+    <Compile Include="Datenbanken\DB_Modi.cs" />
+    <Compile Include="Datenbanken\DB_Tonarten.cs" />
     <Compile Include="Datenbanken\DB_Töne.cs" />
     <Compile Include="Datenbanken\DB_Intervalle.cs" />
+    <Compile Include="Datenbanken\Datensätze\ds_Tonart.cs" />
+    <Compile Include="Datenbanken\Datensätze\ds_Modus.cs" />
+    <Compile Include="Eingabe\Eingaben.cs" />
     <Compile Include="Fenster\Startfenster.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Fenster\Startfenster.Designer.cs">
       <DependentUpon>Startfenster.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_Basisdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_Basisdata.Designer.cs">
+      <DependentUpon>Anz_Basisdata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_IntervallData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_IntervallData.Designer.cs">
+      <DependentUpon>Anz_IntervallData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_Intervall_Objekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_Intervall_Objekt.Designer.cs">
+      <DependentUpon>Anz_Intervall_Objekt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_ModusData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_ModusData.Designer.cs">
+      <DependentUpon>Anz_ModusData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_Ton-Objekt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_Ton-Objekt.Designer.cs">
+      <DependentUpon>Anz_Ton-Objekt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_TonartData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_TonartData.Designer.cs">
+      <DependentUpon>Anz_TonartData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_TonData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\Anz_TonData.Designer.cs">
+      <DependentUpon>Anz_TonData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\wnd_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\wnd_Info.Designer.cs">
+      <DependentUpon>wnd_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\wnd_StatusOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\wnd_StatusOff.Designer.cs">
+      <DependentUpon>wnd_StatusOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\wnd_StatusOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fenster\Testanzeigen\wnd_StatusOn.Designer.cs">
+      <DependentUpon>wnd_StatusOn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_TEST\Teste_Datenbanken.cs" />
+    <Compile Include="_TEST\Teste_TonDB.cs" />
+    <EmbeddedResource Include="Fenster\Startfenster.resx">
+      <DependentUpon>Startfenster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\Anz_Basisdata.resx">
+      <DependentUpon>Anz_Basisdata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\Anz_IntervallData.resx">
+      <DependentUpon>Anz_IntervallData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\Anz_Intervall_Objekt.resx">
+      <DependentUpon>Anz_Intervall_Objekt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\Anz_ModusData.resx">
+      <DependentUpon>Anz_ModusData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\Anz_Ton-Objekt.resx">
+      <DependentUpon>Anz_Ton-Objekt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\Anz_TonartData.resx">
+      <DependentUpon>Anz_TonartData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\Anz_TonData.resx">
+      <DependentUpon>Anz_TonData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\wnd_Info.resx">
+      <DependentUpon>wnd_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\wnd_StatusOff.resx">
+      <DependentUpon>wnd_StatusOff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fenster\Testanzeigen\wnd_StatusOn.resx">
+      <DependentUpon>wnd_StatusOn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,6 +195,7 @@
     <None Include="Basisklassen\Basisdata2.cd" />
     <None Include="Basisklassen\BasisListe.cd" />
     <None Include="Datenbanken\Datensätze\ds_Intervall.cd" />
+    <None Include="Datenbanken\Datensätze\ds_Modus.cd" />
     <None Include="Datenbanken\DB_Intervalle.cd" />
     <None Include="Datenbanken\DB_Töne.cd" />
     <None Include="Properties\Settings.settings">
@@ -122,7 +223,35 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Dokumentation\Dateien\Klassen\Basisklassen\" />
+    <Folder Include="Dokumentation\Dateien\Klassen\Datenbanken\" />
+    <Folder Include="Dokumentation\Dateien\Klassen\Datensätze\" />
+    <Folder Include="Fenster\Steuerelemente\" />
+    <Folder Include="gefunden\" />
+    <Folder Include="SuchKlassen\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dokumentation\_Templates\_Klasse.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Bibliotheken\NameWert\NameWert\NameWert.csproj">
+      <Project>{37584BB4-6748-49F8-859D-5844FF7BB8E7}</Project>
+      <Name>NameWert</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IntervallAnzeige\IntervallAnzeige.csproj">
+      <Project>{847848A7-3122-4EDE-8268-905CA7573ACB}</Project>
+      <Name>IntervallAnzeige</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NameWert_Z\NameWert_Z.csproj">
+      <Project>{CD200164-DE63-45F3-8706-B364532BBFC3}</Project>
+      <Name>NameWert_Z</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TonAnzeige\TonAnzeige.csproj">
+      <Project>{b6f3e066-1842-4767-8050-5f03c6fdf3c6}</Project>
+      <Name>TonAnzeige</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

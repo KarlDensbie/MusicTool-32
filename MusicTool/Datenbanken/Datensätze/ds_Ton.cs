@@ -1,4 +1,33 @@
-﻿using System;
+﻿#define TEST
+/* genereller Schalter zum Testen 
+#undef TEST
+*/
+#define EINGABE
+/* eingegebene Werte anzeigen
+#undef EINGABE
+*/
+#define START
+/* Start bzw. Ende von Methoden anzeigen 
+#undef START
+*/
+#define AUSGABE
+/* Ausgabe-Werte anzeigen
+#undef AUSGABE
+*/
+#define ZWISCHENWERTE
+/* Zwischenergebnisse anzeigen
+#undef ZWISCHENWERTE
+*/
+#define INFO
+/* diverse Informationen anzeigen
+#undef INFO
+*/
+#define INIT
+/* diverse Informationen anzeigen 
+#undef INIT
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +35,36 @@ using System.Threading.Tasks;
 
 using MusicTool;
 using MusicTool.Basisklassen;
+using MusicTool.Datenbanken;
+using MusicTool.Datenbanken.Datensätze;
+using MusicTool.Eingabe;
+using MusicTool.Fenster;
+using MusicTool.Fenster.Testanzeigen;
 
 namespace MusicTool.Datenbanken.Datensätze
 {
 	/// <summary> Klasse       : ds_Ton
-	/// <para>ABGELEITET VON: bcl_Basisdata</para>
 	/// <para></para>
+	/// ABGELEITET VON: <b><i>bcl_Basisdata&lt;T&gt;</i></b>
+	/// <para>Datensatz für einen Ton</para>
 	/// .
 	/// <para>    Programmierer    : Michael Pütz</para>
-	/// <para>    getestet am      : </para>
+	/// <para>    getestet am      : 2016-12-14  21:22:55</para>
 	/// </summary>
-	public class ds_Ton:bcl_Basisdata
+	/// <remarks> Getestet:
+	/// <para>Konstruktor -  getestet am      : 2016-12-14  19:24:23</para>
+	/// <para>TonName - getestet am      : 2016-12-14  19:24:23</para>
+	/// <para>TonID - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>Grundton - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>IntGrundton - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>EnhU - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>IntEnhU - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>EnhO - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>IntEnhO - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>enhU() - getestet am      : 2016-12-14  20:23:30</para>
+	/// <para>enhO() - getestet am      : 2016-12-14  20:23:30</para>
+	/// </remarks>
+	public class ds_Ton : bcl_Basisdata
 	{
 		#region VersionInfo
 
@@ -25,39 +73,41 @@ namespace MusicTool.Datenbanken.Datensätze
 		private static dType zz_datenTyp = dType.Tondaten;
 		private static string zz_hauptversion= "0";
 		private static string zz_nebenversion= "1";
-		private static string zz_revision= "1";
-		private static string zz_letzteBearbeitung= "2016-11-12  17:17:37";
+		private static string zz_revision= "5";
+		private static string zz_letzteBearbeitung= "2016-12-17  15:03:33";
 		private static string zz_ersteBearbeitung= "2016-11-12 16:31.31";
 		private static string zz_getestet= "";
 		#region VersionInfoEigenschaften
-		/// <summary> Eigenschaft: zz_KlassenName
-		/// <para>gibt den Namen der Klasse aus</para>
-		/// <para>TYP: STRING</para>
+		/// <summary> Methode: VersionInfo()
+		/// <para>gibt Infos zur Version aus</para>
+		/// </summary>
+		/// <returns>Versions-Infos</returns>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
 		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:31:43</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:31:43</para>
+		/// <para>    letzteBearbeitung: 2016-11-23  18:30:44</para>
+		/// <para>    ersteBearbeitung : 2016-11-23  18:30:44</para>
 		/// .
 		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static new string zz_KlassenName { get { return zz_klassenName; } }
-		/// <summary> Eigenschaft: zz_Namespace
-		/// <para>gibt den Namespace der Klasse aus</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:32:38</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:32:38</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static new string zz_Namespace { get { return zz_namespace; } }
+		/// </remarks>
+		public static new string VersionInfo()
+		{
+			string ausgabe = "";
+			string neueZeile = "/n";
+			ausgabe += zz_klassenName + neueZeile;
+			ausgabe += zz_namespace + neueZeile;
+			ausgabe += zz_datenTyp.ToString() + neueZeile;
+			ausgabe += zz_getestet + neueZeile;
+			ausgabe += zz_Pfad + neueZeile;
+			ausgabe += zz_VersionInfo + neueZeile;
+			ausgabe += zz_letzteBearbeitung + neueZeile;
+			ausgabe += zz_ersteBearbeitung + neueZeile;
+			ausgabe += "---------------------------------" + neueZeile;
+			return ausgabe;
+		}
 		/// <summary> Eigenschaft: zz_Pfad
 		/// <para>gibt den Pfad (Namespace + Klassenname) aus</para>
 		/// <para>TYP: STRING</para>
@@ -71,7 +121,7 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// .
 		/// <para>    getestet am      : </para>
 		/// </summary>
-		public static new string zz_Pfad { get { return zz_namespace + "." + zz_klassenName; } }
+		private static string zz_Pfad { get { return zz_namespace + "." + zz_klassenName; } }
 		/// <summary> Eigenschaft: zz_VersionInfo
 		/// <para>gibt die Version der Klasse aus</para>
 		/// <para>TYP: STRING</para>
@@ -85,127 +135,100 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// .
 		/// <para>    getestet am      : </para>
 		/// </summary>
-		public static new string zz_VersionInfo
+		private static string zz_VersionInfo
 		{
 			get {
 				return "Version: " + zz_hauptversion + "." + zz_nebenversion +
 			  ", Revision: " + zz_revision;
 			}
 		}
-		/// <summary> Eigenschaft: zz_AktBearbeitung
-		/// <para>gibt das Datum der letzten Bearbeitung der Klasse aus</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:35:45</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:35:45</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static new string zz_AktBearbeitung { get { return zz_letzteBearbeitung; } }
-		/// <summary> Eigenschaft: zz_BearbeitungsBeginn
-		/// <para>gibt aus, ab wann diese Klasse programmiert wurde</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:36:44</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:36:44</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static new string zz_BearbeitungsBeginn { get { return zz_ersteBearbeitung; } }
-		/// <summary> Eigenschaft: zz_DatenTyp
-		/// <para>gibt den Datentyp der Klasse aus</para>
-		/// <para>TYP: dType</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:37:35</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:37:35</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static new dType zz_DatenTyp { get { return zz_datenTyp; } }
-		/// <summary> Eigenschaft: zz_Getestet
-		/// <para>gibt aus, wann die Klasse getestet wurde</para>
-		/// <para>TYP: STRING</para>
-		/// .
-		/// <para>    Programmierer    : Michael Pütz</para>
-		///           Version          : 0
-		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-07-10  12:43:07</para>
-		/// <para>    ersteBearbeitung : 2016-07-10  12:43:07</para>
-		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public static new string zz_Getestet { get { return zz_getestet; } }
 		#endregion VersionInfoEigenschaften
 
 		#endregion VersionInfo
 
 		#region Attribute
 
-		/// <summary>_tonIndex
-		/// <para>Index des Tons in der Datenbank DB_Töne</para>
-		/// <para>TYP: eTon</para>
+		/// <summary>_tonID
+		/// <para>ID des Tons in der Datenbank DB_Töne</para>
+		/// <para></para>
+		/// TYP: <b><i>eTon</i></b>
 		/// </summary>
-		private eTon _tonIndex;
+		private eTon _tonID;
 
 		/// <summary>_grundton
 		/// <para>Grundton des Tons (Tonfamilie)</para>
-		/// <para>TYP: eGrundton</para>
+		/// <para></para>
+		/// TYP: <b><i>eGrundton</i></b>
 		/// </summary>
 		private eGrundton _grundton;
 
 		/// <summary>_enhU
-		/// <para>Index der unteren enharmonischen Verwechselung</para>
-		/// <para>TYP: eTon</para>
+		/// <para>ID der unteren enharmonischen Verwechselung</para>
+		/// <para></para>
+		/// TYP: <b><i>eTon</i></b>
 		/// </summary>
 		private eTon _enhU;
 
 		/// <summary>_enhO
-		/// <para>Index der oberen enharmonischen Verwechselung</para>
-		/// <para>TYP: eTon</para>
+		/// <para>ID der oberen enharmonischen Verwechselung</para>
+		/// <para></para>
+		/// TYP: <b><i>eTon</i></b>
 		/// </summary>
 		private eTon _enhO;
+
+		private string KLASSE = "Datenbanken.Datensätze.ds_Ton";
 
 		#endregion Attribute
 
 		#region Konstruktor
 
-		/// <summary> Konstruktor(name,index,grundTon,enhU,enhO)
-		/// <para>initialisiert die Klasse mit allen nötigen Informationen</para>
+		/// <summary> Konstruktor(name,id,grundTon,enhU,enhO)
+		/// <para>instanziiert die Klasse mit:</para>
+		/// <para>- lbl_Name des Tons,</para>
+		/// <para>- ID des Tons,</para>
+		/// <para>- Grundton,</para>
+		/// <para>- unterer enharmonischer Verwechselung des Tons,</para>
+		/// <para>- oberer enharmonischer Verwechselung des Tons</para>
+		/// </summary>
+		/// <param name="name">lbl_Name des Tons, TYP: <b><i>STRING</i></b></param>
+		/// <param name="id">ID des Tons in der Datenbank DB_Töne, TYP: <b><i>eTon</i></b></param>
+		/// <param name="grundTon">Grundton des Tons (Tonfamilie), TYP: <b><i>eGrundton</i></b></param>
+		/// <param name="enhU">ID der unteren enharmonischen Verwechselung, TYP: <b><i>eTon</i></b></param>
+		/// <param name="enhO">ID der oberen enharmonischen Verwechselung, TYP: <b><i>eTon</i></b></param>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
-		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-11-12  17:03:53</para>
-		/// <para>    ersteBearbeitung : 2016-11-12  16:56:45</para>
+		///           Revision         : 4
+		/// <para>    letzteBearbeitung: 2016-12-17  14:07:45</para>
+		/// <para>    letzteBearbeitung: 2016-12-17  14:57:35</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		/// <param name="name">Name des Tons, TYP: STRING</param>
-		/// <param name="idx">Index des Tons in der Datenbank DB_Töne, TYP: eTon</param>
-		/// <param name="grundTon">Grundton des Tons (Tonfamilie), TYP: eGrundton</param>
-		/// <param name="enhU">Index der unteren enharmonischen Verwechselung, TYP: eTon</param>
-		/// <param name="enhO">Index der oberen enharmonischen Verwechselung, TYP: eTon</param>
-		public ds_Ton(string name,eTon idx,eGrundton grundTon,eTon enhU,eTon enhO):
-			base(name,dType.Tondaten , (int)idx)
+		/// <para>    getestet am      : 2016-12-14  19:24:23</para>
+		/// </remarks>
+		public ds_Ton( string name , eTon id , eGrundton grundTon , eTon enhU , eTon enhO ) :
+			base( name , dType.Tondaten , (int)id )
 		{
-			_tonIndex = idx;
+			#region DEBUG_INFO
+#if TEST
+			string MethodenName =KLASSE+"(name,id,grundTon,enhU,enhO)";
+#if INIT
+			wnd_StatusOn ein = new wnd_StatusOn( MethodenName );
+#endif //INIT
+#endif //TEST
+			#endregion DEBUG_INFO
+			_tonID = id;
 			_grundton = grundTon;
 			_enhO = enhO;
 			_enhU = enhU;
+			#region DEBUG_INFO
+#if TEST
+#if INIT
+			Anz_Ton_Objekt info = new Anz_Ton_Objekt(MethodenName, this );
+			wnd_StatusOff aus = new wnd_StatusOff( MethodenName );
+#endif //INIT
+#endif //TEST
+			#endregion DEBUG_INFO
 		}
 
 		#endregion Konstruktor
@@ -214,8 +237,11 @@ namespace MusicTool.Datenbanken.Datensätze
 
 		/// <summary> Eigenschaft: TonName
 		/// <para>gibt den Namen des Tons aus</para>
-		/// <para>TYP: STRING</para>
+		/// <para></para>
+		/// TYP: <b><i>STRING</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -223,29 +249,41 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// <para>    letzteBearbeitung: 2016-11-12  17:05:23</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:05:23</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public string TonName { get { return Name; } }
+		/// <para>    getestet am      : 2016-12-14  19:24:23</para>
+		/// </remarks>
+		public string TonName
+		{
+			get { return Name; }
+		}
 
-		/// <summary> Eigenschaft: TonIndex
-		/// <para>gibt den Ton-Index als eTon aus</para>
-		/// <para>TYP: eTon</para>
+		/// <summary> Eigenschaft: TonID
+		/// <para>gibt den Ton-ID als eTon aus</para>
+		/// <para></para>
+		/// TYP: <b><i>eTon</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
 		///           Revision         : 1
-		/// <para>    letzteBearbeitung: 2016-11-12  17:07:54</para>
+		/// <para>    letzteBearbeitung: 2016-11-24  12:20:44</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:07:54</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public eTon TonIndex { get { return _tonIndex; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public eTon TonID
+		{
+			get { return _tonID; }
+		}
 
 		/// <summary> Eigenschaft: Grundton
 		/// <para>gibt den Grundton als eGrundton aus</para>
-		/// <para>TYP: eGrundton</para>
+		/// <para></para>
+		/// TYP: <b><i>eGrundton</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -253,14 +291,20 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// <para>    letzteBearbeitung: 2016-11-12  17:09:54</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:09:54</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public eGrundton Grundton { get { return _grundton; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public eGrundton Grundton
+		{
+			get { return _grundton; }
+		}
 
 		/// <summary> Eigenschaft: IntGrundton
 		/// <para>gibt den Grundton als INT aus</para>
-		/// <para>TYP: INT</para>
+		/// <para></para>
+		/// TYP: <b><i>INT</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -268,14 +312,20 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// <para>    letzteBearbeitung: 2016-11-12  17:12:10</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:09:54</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public int IntGrundton { get { return (int)_grundton; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public int IntGrundton
+		{
+			get { return (int)_grundton; }
+		}
 
 		/// <summary> Eigenschaft: EnhU
-		/// <para>gibt den Ton-Index der unteren enharmonischen Verwechselung als eTon aus</para>
-		/// <para>TYP: eTon</para>
+		/// <para>gibt den Ton-ID der unteren enharmonischen Verwechselung als eTon aus</para>
+		/// <para></para>
+		/// TYP: <b><i>eTon</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -283,14 +333,20 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// <para>    letzteBearbeitung: 2016-11-12  17:13:16</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:13:16</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public eTon EnhU { get { return _enhU; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public eTon EnhU
+		{
+			get { return _enhU; }
+		}
 
 		/// <summary> Eigenschaft: IntEnhU
-		/// <para>gibt den Ton-Index der unteren enharmonischen Verwechselung als INT aus</para>
-		/// <para>TYP: INT</para>
+		/// <para>gibt den Ton-ID der unteren enharmonischen Verwechselung als INT aus</para>
+		/// <para></para>
+		/// TYP: <b><i>INT</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -298,14 +354,20 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// <para>    letzteBearbeitung: 2016-11-12  17:13:16</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:13:16</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public int IntEnhU { get { return (int)_enhU; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public int IntEnhU
+		{
+			get { return (int)_enhU; }
+		}
 
 		/// <summary> Eigenschaft: EnhO
-		/// <para>gibt den Ton-Index der oberen enharmonischen Verwechselung als eTon aus</para>
-		/// <para>TYP: eTon</para>
+		/// <para>gibt den Ton-ID der oberen enharmonischen Verwechselung als eTon aus</para>
+		/// <para></para>
+		/// TYP: <b><i>eTon</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -313,14 +375,17 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// <para>    letzteBearbeitung: 2016-11-12  17:13:16</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:13:16</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
 		public eTon EnhO { get { return _enhO; } }
 
 		/// <summary> Eigenschaft: IntEnhO
-		/// <para>gibt den Ton-Index der oberen enharmonischen Verwechselung als INT aus</para>
-		/// <para>TYP: INT</para>
+		/// <para>gibt den Ton-ID der oberen enharmonischen Verwechselung als INT aus</para>
+		/// <para></para>
+		/// TYP: <b><i>INT</i></b>
+		/// </summary>
 		/// .
+		/// <remarks>
 		/// <para>    Programmierer    : Michael Pütz</para>
 		///           Version          : 0
 		/// <para>    Unterversion     : 1</para>
@@ -328,13 +393,96 @@ namespace MusicTool.Datenbanken.Datensätze
 		/// <para>    letzteBearbeitung: 2016-11-12  17:13:16</para>
 		/// <para>    ersteBearbeitung : 2016-11-12  17:13:16</para>
 		/// .
-		/// <para>    getestet am      : </para>
-		/// </summary>
-		public int IntEnhO { get { return (int)_enhO; } }
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public int IntEnhO
+		{
+			get { return (int)_enhO; }
+		}
 
 		#endregion Eigenschaften
 
 		#region Methoden
+
+		/// <summary> Methode: enhU()
+		/// <para>gibt die untere enharmonische Verwechselung als Ton-Objekt aus</para>
+		/// </summary>
+		/// <returns>Ton-Objekt, TYP: <b><i>ds_Ton</i></b></returns>
+		/// .
+		/// <remarks>
+		/// <para>    Programmierer    : Michael Pütz</para>
+		///           Version          : 0
+		/// <para>    Unterversion     : 1</para>
+		///           Revision         : 4
+		/// <para>    letzteBearbeitung: 2016-12-17  14:59:06</para>
+		/// <para>    ersteBearbeitung : 2016-11-23  13:59:22</para>
+		/// .
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public ds_Ton enhU()
+		{
+			#region DEBUG_INFO
+#if TEST
+			string MethodenName =KLASSE+".enhU()";
+#if START
+			wnd_StatusOn ein = new wnd_StatusOn( MethodenName );
+#endif //START
+#endif //TEST
+			#endregion DEBUG_INFO
+			ds_Ton ausgabe = DB_Töne.getTon( _enhU );
+			#region DEBUG_INFO
+#if TEST
+
+#if AUSGABE
+			Anz_Ton_Objekt info = new Anz_Ton_Objekt(MethodenName, ausgabe );
+#endif //AUSGABE
+			#if START
+			wnd_StatusOff aus = new wnd_StatusOff( MethodenName );
+#endif //START
+			#endif //TEST
+#endregion DEBUG_INFO
+			return ausgabe;
+		}
+
+		/// <summary> Methode: enhO()
+		/// <para>gibt die obere enharmonische Verwechselung als Ton-Objekt aus</para>
+		/// </summary>
+		/// <returns>Ton-Objekt, TYP: <b><i>ds_Ton</i></b></returns>
+		/// .
+		/// <remarks>
+		/// <para>    Programmierer    : Michael Pütz</para>
+		///           Version          : 0
+		/// <para>    Unterversion     : 1</para>
+		///           Revision         : 4
+		/// <para>    letzteBearbeitung: 2016-12-17  15:00:05</para>
+		/// <para>    ersteBearbeitung : 2016-11-23  14:02:03</para>
+		/// .
+		/// <para>    getestet am      : 2016-12-14  20:23:30</para>
+		/// </remarks>
+		public ds_Ton enhO()
+		{
+			#region DEBUG_INFO
+#if TEST
+			string MethodenName =KLASSE+".enhO()";
+#if START
+			wnd_StatusOn ein = new wnd_StatusOn( MethodenName );
+#endif //START
+#endif //TEST
+			#endregion DEBUG_INFO
+			ds_Ton ausgabe = DB_Töne.getTon( _enhO );
+			#region DEBUG_INFO
+#if TEST
+
+#if AUSGABE
+			Anz_Ton_Objekt info = new Anz_Ton_Objekt(MethodenName, ausgabe );
+#endif //AUSGABE
+#if START
+			wnd_StatusOff aus = new wnd_StatusOff( MethodenName );
+#endif //START
+#endif //TEST
+			#endregion DEBUG_INFO
+			return ausgabe;
+		}
 
 		#endregion Methoden
 	}

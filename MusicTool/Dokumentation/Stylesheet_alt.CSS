@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+	<!-- Adresse der Datei:
+		V:/Stylesheet.CSS
+	 -->
+	<!-- Dateipfad DIESER Datei :
+		V:/
+	-->
+	<!-- Relativer Pfad zu Stylesheet.CSS:
+.
+	-->
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+	<head>
+		<meta name="author" content="Michael P&uuml;tz">
+		<style type="text/css">
+			body {
+				font-family:'Arial';
+				font-size:10pt;
+				color:black;
+				}
+				a:link{color:blue;}
+			h1 {/* Header1: Haupt&Uuml;berschrift, Ebene1 */
+				font-family:'Times New Roman';
+				font-size:200%;
+				font-weight:bolder;
+				color:blue;
+				text-align:center;
+				}
+			h2 {/* Header2: etwas untergeordnete &Uuml;berschrift, Ebene2 */
+				font-family:'Times New Roman';
+				font-size:180%;
+				font-weight:bold;
+				color:green;
+				text-align:center;
+				}
+			h3 {/* Header3: untergeordnete &Uuml;berschrift, Ebene3 */
+				font-family:'Arial';
+				font-size:160%;
+				font-weight:bold;
+				font-style:italic;
+				color:green;
+				text-align:center;
+				}
+			h4 {/* Header4: untergeordnete &Uuml;berschrift, Ebene4 */
+				font-family:'Arial';
+				font-size:140%;
+				font-style:italic;
+				color:green;
+				text-align:center;
+				}
+			figure {
+				wrap-flow: both;
+				margin: 0;
+				padding: 10px;
+				border: 1px solid gainsboro;
+				background: white;
+				}
+			figcaption {
+				padding: 10px;
+				text-align: left;
+				}
+		/* IDs */
+			#Titel {/* Darstellung eines Titels */
+				text-align:center;
+				font-family:'Arial';
+				font-size:36pt;
+				color:red;
+				}
+			#SubTitel {/* Darstellung eines Untertitels */
+				font-family:'Times New Roman';
+				font-size:10pt;
+				font-style:italic;
+				text-align:center;
+				}
+			#hervorgehoben1 { /* Sehr hervorgehoben */
+				font-size:140%;
+				font-weight:bold;
+				}
+			#hervorgehoben1a { /* Sehr hervorgehoben,rot */
+				font-size:140%;
+				color:red;
+				font-weight:bold;
+				}
+			#hervorgehoben2 { /* hervorgehoben */
+				font-size:120%;
+				font-style:italic;
+				font-weight:bold;
+				}
+			#hervorgehoben2a { /* hervorgehoben,blau */
+				font-size:120%;
+				color:green;
+				font-style:italic;
+				font-weight:bold;
+				}
+			#Klasse{ /* zur Darstellung der Klasse */
+				font-weight:bold;
+				font-size:120%;
+				color:green
+				}
+			#NameKlasse{ /* zur Darstellung des Klassen-Namens */
+				font-weight:bold;
+				font-size:140%;
+				color:#449944
+				}
+			#Ableitung{/* zur Darstellung der Basisklasse dieser Klasse */
+				font-weight:bold;
+				font-size:160%;
+				color:#FF44FF
+				}
+			#Hinweis{ /* zur Darstellung eines Hinweises */
+				font-style:italic;
+				color:#FF2200
+				}
+			#Beschreibung{ /* zur Darstellung einer Beschreibung */
+				color:#555555
+				}
+			#Verweis{ /* zur Darstellung eines Verweises */
+				color:#bb4444
+				}
+			#SourceCode{ /* Darstellung von Quell-Datei-Passagen */
+				font-family:'Courier New';
+			}
+			#PrgText { /* Box f&uuml;r Programmtext */
+				font:'Courier New'
+				border-width:2px;
+				border-style:solid;
+				padding:5px;
+			}
+		</style>
+
+	</head>
+	
+<!-- Version 0.1,
+	 Revision 3
+-->
+<!-- Editiert: 22.10.2016 10:31:40
+-->
+</html>

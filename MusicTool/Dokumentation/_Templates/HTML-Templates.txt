@@ -1,0 +1,57 @@
+﻿HTML-Templates
+--------------
+
+Seiten-Überschrift:
+-------------------
+<P align="center" id="hervorgehoben1a"><FONT size="7">
+
+</FONT></P>
+
+----- *********************************** -----
+
+Link:
+-----
+<li><a href="
+
+" target="_Blank">
+
+</a></li>
+
+----- *********************************** -----
+
+unsichtbare Tabelle:
+--------------------
+		<table border="0">
+			<tr>
+				<colgroup>
+					<col width="270" valign="top">
+					<col width="540" valign="top">
+				</colgroup>
+			</tr>
+		</table>
+
+----- *********************************** -----
+
+Tabellenspalte:
+---------------
+				<td>
+				</td>
+
+----- *********************************** -----
+
+Tabellenspalte mit Bild:
+------------------------
+				<td>
+					<img src="
+" alt="
+" width="
+" height="
+">
+					<figcaption>
+
+ 
+ - Klassenansicht</figcaption><br>
+				</td>
+
+----- *********************************** -----
+

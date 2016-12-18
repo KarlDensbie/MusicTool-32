@@ -37,13 +37,41 @@ namespace MusicTool
 		/// Intervall-Datenbank
 		/// </summary>
 		DB_Intervalle = 5,
+		/// <summary>
+		/// Tonart in der DB_tonarten
+		/// </summary>
+		Tonart = 6,
+		/// <summary>
+		/// Tonarten-Datenbank
+		/// </summary>
+		DB_Tonarten = 7,
+		/// <summary>
+		/// Modus-Datensatz der DB_Modi
+		/// </summary>
+		Modus =8 ,
+		/// <summary>
+		/// Modi-Datenbank
+		/// </summary>
+		DB_Modi =9 ,
+		/// <summary>
+		/// eingegebene Töne
+		/// </summary>
+		Eingabe = 10,
+		/// <summary>
+		/// Fenster zur Anzeige von Informationen
+		/// </summary>
+		InfoFenster = 253,
 		/// <summary>Tool für diverse Zwecke
 		/// </summary> 
 		Tool = 254,
 		/// <summary>
 		/// The main PRG
 		/// </summary>
-		MainPrg = 255
+		MainPrg = 255,
+		/// <summary>
+		/// Testprogramme
+		/// </summary>
+		TEST
 	}
 
 	/// <summary> AUFZÄHLUNG: eTon

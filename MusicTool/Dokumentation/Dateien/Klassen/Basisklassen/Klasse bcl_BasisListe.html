@@ -1,0 +1,388 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Adresse der Datei:
+		V:/Dateien/Klassen/Basisklassen/Klasse bcl_BasisListe.html
+	 -->
+<!-- Dateipfad DIESER Datei :
+		V:/Dateien/Klassen/Basisklassen/
+-->
+<!-- Relativer Pfad zu Stylesheet.CSS:
+../../../
+-->
+
+<html lang="de-de" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta name="author" content="Michael P&uuml;tz">
+	<BASE target="_self" />
+	<link rel="stylesheet" href="../../../stylesheet.css" type="text/css">
+	<title>Beschreibung</title>
+</head>
+<body>
+	<P align="center" id="hervorgehoben1a"><!-- Überschrift -->
+		<i>Klasse: </i>
+		<FONT size="7">bcl_BasisListe&lt;T&gt;</FONT>
+	</P><!-- Überschrift ENDE -->
+	<P>&nbsp;</P>
+	<P align="left"><!-- Erklährung -->
+Diese Klasse dient als Basisklasse für alle Listen von Objekten. <BR>
+Der Datentyp wird bei der Instantiierung festgelegt.
+	</P><!-- Erklährung ENDE -->
+	<P align="left"><!-- Aufruf -->
+		<i>Aufruf: </i>
+		<span id="Aufruf">
+			<span id="NameKlasse">bcl_BasisListe</span>
+			(
+				<span id="Parameter">name</span> , 
+				<span id="Parameter">typ</span> , 
+				<span id="Parameter">id</span>
+			)
+		</span>
+	</P><!-- Aufruf ENDE -->
+	<P align="left"><!-- öffentliche Schnittstellen -->
+		<table border="1"><!-- Tabelle: Schnittstellen -->
+			<colgroup>
+				<col width="176" valign="top">
+				<col width="540" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Schnittstellen: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/Klasse-bcl_BasisListe.png" 
+						alt="bcl_BasisListe" 
+						width="176" 
+						height="316">
+					<figcaption>Klasse-bcl_BasisListe</figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3>öffentliche Schnittstellen:</h3>
+					<ul><!-- Datenverkehr -->
+						<strong>Eingabe:</strong>
+						<ul><!-- Eingabe -->
+							<li><span id="NameMethode">Konstruktor</span>(
+								<span id="Parameter">name</span> , 
+								<span id="Parameter">typ</span> , 
+								<span id="Parameter">id</span>
+								)
+							</li>
+							<ul><!-- Konstruktor -->
+								<b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+								<li>Folgende Daten werden gespeichert:<br>
+									<ol><!-- Tabelle -->
+										<li><!-- Parameter: name -->
+											<span id="Parameter"> name </span><BR>
+											==> <span id="Beschreibung"> Name der Instanz </span><br>
+											==> <i>TYP:<b> STRING</b></i>
+										</li><!-- Parameter: name ENDE -->
+										<li><!-- Parameter: typ -->
+											<span id="Parameter"> typ </span> 
+											==> <span id="Beschreibung"> Typ der Instanz</span><br>
+											==> <i>TYP:<b> dType</b></i>
+										</li><!-- Parameter: typ ENDE -->
+										<li><!-- Parameter: id -->
+											<span id="Parameter"> id </span> 
+											==> <span id="Beschreibung"> ID der Instanz</span><br>
+											==> <i>TYP:<b> INT</b></i>
+										</li><!-- Parameter: id ENDE -->
+									</ol><!-- Tabelle ENDE -->
+								</li>
+							</ul><!-- Konstruktor ENDE -->
+							<br>
+							<li><strong>Methoden:</strong></li>
+							<ol><!-- Methoden -->
+								<li><!-- Methode: ADD(element) -->
+									<span id="NameMethode">ADD</span>(
+										<span id="Parameter">element</span>
+										)
+									<br>
+									<span id="Beschreibung">fügt ein Element an die Liste an.</span>
+									<br>
+									<u>Parameter:</u>
+									<ol><!-- Parameter-Tabelle -->
+										<!-- Parameter: element -->
+										<li><span id="Parameter"> element </span><br>
+											<span id="Beschreibung">neues Element der Liste </span>
+											<br>
+											==> <i>TYP:<b> T </b></i> (generisch)<BR>
+										</li><!-- Parameter: element ENDE -->
+									</ol>	
+									<!-- Parameter-Tabelle ENDE -->
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE --> KEINE<br>
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: ADD(element) ENDE -->
+								<br>
+							</ol><!-- Methoden ENDE -->
+						</ul><!-- Eingabe ENDE -->
+						-------------------------------------------------------------
+						<br>
+						<br>
+						<strong>Ausgabe:</strong>
+						<ul><!-- Ausgabe -->
+							<li><strong>Eigenschaften:</strong></li>
+							<ol><!-- Eigenschaften -->
+								<li><!-- Eigenschaft: Typ -->
+									<span id="NameEigenschaft">Typ</span>
+									<br>
+									<span id="Beschreibung">gibt den Typ der Liste aus</span>
+									<br>
+									==> <i>TYP:<b> dType</b></i>
+								</li><!-- Eigenschaft: Typ ENDE -->
+								<li><!-- Eigenschaft: Anzahl -->
+									<span id="NameEigenschaft">Anzahl</span>
+									<br>
+									<span id="Beschreibung">gibt die Anzahl der Listen-Elemente aus</span>
+									<br>
+									==> <i>TYP:<b> INT</b></i>
+								</li><!-- Eigenschaft: Anzahl ENDE -->
+								<li><!-- Eigenschaft: Liste -->
+									<span id="NameEigenschaft">Liste</span>
+									<br>
+									<span id="Beschreibung">gibt die Liste der Elemente aus</span>
+									<br>
+									==> <i>TYP:<b> List&lt;T&gt;</b></i>
+								</li><!-- Eigenschaft: Liste ENDE -->
+								<li><!-- Eigenschaft: Name -->
+									<span id="NameEigenschaft">Name</span>
+									<br>
+									<span id="Beschreibung">gibt den Namen der Liste aus</span>
+									<br>
+									==> <i>TYP:<b> STRING</b></i>
+								</li><!-- Eigenschaft: Name ENDE -->
+								<li><!-- Eigenschaft: ID -->
+									<span id="NameEigenschaft">ID</span>
+									<br>
+									<span id="Beschreibung">gibt die ID der Liste aus</span>
+									<br>
+									==> <i>TYP:<b> INT </b></i>
+								</li><!-- Eigenschaft: ID ENDE -->
+							</ol><!-- Eigenschaften ENDE -->
+							<BR>
+							<li><strong>Methoden:</strong></li>
+							<ol><!-- Methoden -->
+								<li><!-- Methode: getElement(id) -->
+									<span id="NameMethode">getElement( <span id="Parameter"> id </span> )</span>
+									<br>
+									<span id="Beschreibung">gibt ein Element der Liste aus</span>
+									<br>
+									<u>Parameter:</u>
+									<ol><!-- Parameter-Tabelle -->
+										<!-- Parameter: id -->
+											<li><span id="Parameter"> id </span><br>
+											<span id="Beschreibung"> ID der Liste </span><br>
+											==> <i>TYP:<b> INT </b></i>
+											</li><!-- Parameter: id ENDE -->
+									</ol><!-- Parameter-Tabelle ENDE -->
+									<u>Rückgabe:</u><br>
+									<ul><!-- RÜCKGABE -->
+										<span id="Beschreibung"> Listen-Element </span><br>
+											==> <i>TYP:<b> &lt;T&gt; </b></i>(generisch)
+									</ul><!-- RÜCKGABE ENDE -->
+								</li><!-- Methode: getElement(id) ENDE -->
+							</ol><!-- Methoden ENDE -->
+							<br>
+						</ul><!-- Ausgabe ENDE -->
+					</ul><!-- Datenverkehr ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Schnittstellen: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Schnittstellen ENDE -->
+	</P><!-- öffentliche Schnittstellen ENDE -->
+	<br>
+	<br>
+	<P align="left"><!-- Interne Struktur -->
+		<table border="1"><!-- Tabelle: Intern -->
+			<colgroup>
+				<col width="383" valign="top">
+				<col width="540" valign="top">
+			</colgroup>
+			<tr><!-- Tabelle = Intern: Zeile 01 -->
+				<td><!-- Bild -->
+					<img src="../../../_Bilder/bcl_BasisListe_verb.png" 
+						alt="bcl_BasisListe"
+						width="382" 
+						height="429"
+					>
+					<figcaption>bcl_BasisListe</figcaption><br>
+				</td><!-- Bild ENDE -->
+				<td><!-- Text -->
+					<h3> Interne Struktur: </h3>
+
+					Die <b>VersionInfo</b> kann nur durch eine <b>spezielle Klasse</b> angezeigt werden.<br>
+					<ul><!-- INHALT -->
+						<li><strong>Attribute:</strong></li>
+						<ol><!-- Attribute -->
+							<li><!-- Attribut: _liste -->
+								<span id="NameAttribut">_liste</span>
+								<br>
+								<span id="Beschreibung">allgemeine Liste unbestimmten Typs</span>
+								<br>
+								==> <i>TYP:<b> List&lt;T&gt;</b></i>
+							</li><!-- Attribut: _liste ENDE -->
+							<li><!-- Attribut: _name -->
+								<span id="NameAttribut">_name</span>
+								<br>
+								<span id="Beschreibung">speichert den Namen der Liste</span>
+								<br>
+								==> <i>TYP:<b> STRING</b></i>
+							</li><!-- Attribut: _name ENDE -->
+							<li><!-- Attribut: _typ -->
+								<span id="NameAttribut">_typ</span>
+								<br>
+								<span id="Beschreibung">Datentyp der Liste</span>
+								<br>
+								==> <i>TYP:<b> dType</b></i>
+							</li><!-- Attribut: _typ ENDE -->
+							<li><!-- Attribut: _id -->
+								<span id="NameAttribut">_id</span>
+								<br>
+								<span id="Beschreibung">ID der Liste</span>
+								<br>
+								==> <i>TYP:<b> INT</b></i>
+							</li><!-- Attribut: _id ENDE -->
+						</ol><!-- Attribute ENDE -->
+						<br>
+						<li><span id="NameMethode">Konstruktor</span>(
+							<span id="Parameter">name</span>, 
+							<span id="Parameter">typ</span>, 
+							<span id="Parameter">id</span>
+							)
+						</li>
+						<ul><!-- Konstruktor -->
+							<b>EINZIGE Möglichkeit</b> zur Speicherung der Objektdaten:<br>
+							<li>Folgende Daten werden gespeichert:<br>
+								<ol><!-- Tabelle -->
+									<li><!-- Parameter: name -->
+										<span id="Parameter"> name </span><BR>
+										==> <span id="Beschreibung"> Name der Instanz </span><br>
+										==> <i>TYP:<b> STRING</b></i>
+									</li><!-- Parameter: name ENDE -->
+									<li><!-- Parameter: typ -->
+										<span id="Parameter"> typ </span> 
+										==> <span id="Beschreibung"> Typ der Instanz</span><br>
+										==> <i>TYP:<b> dType</b></i>
+									</li><!-- Parameter: typ ENDE -->
+									<li><!-- Parameter: id -->
+										<span id="Parameter"> id </span> 
+										==> <span id="Beschreibung"> ID der Instanz</span><br>
+										==> <i>TYP:<b> INT</b></i>
+									</li><!-- Parameter: id ENDE -->
+								</ol><!-- Tabelle ENDE -->
+							</li>
+						</ul><!-- Konstruktor ENDE -->
+						<br>
+						<li><strong>Eigenschaften:</strong></li>
+						<ol><!-- Eigenschaften -->
+							<li><!-- Eigenschaft: Typ -->
+								<span id="NameEigenschaft">Typ</span>
+								<br>
+								<span id="Beschreibung">gibt den Typ der Liste aus</span>
+								<br>
+								==> <i>TYP:<b> dType</b></i>
+							</li><!-- Eigenschaft: Typ ENDE -->
+							<li><!-- Eigenschaft: Anzahl -->
+								<span id="NameEigenschaft">Anzahl</span>
+								<br>
+								<span id="Beschreibung">gibt die Anzahl der Listen-Elemente aus</span>
+								<br>
+								==> <i>TYP:<b> INT</b></i>
+							</li><!-- Eigenschaft: Anzahl ENDE -->
+							<li><!-- Eigenschaft: Liste -->
+								<span id="NameEigenschaft">Liste</span>
+								<br>
+								<span id="Beschreibung">gibt die Liste der Elemente aus</span>
+								<br>
+								==> <i>TYP:<b> List&lt;T&gt;</b></i>
+							</li><!-- Eigenschaft: Liste ENDE -->
+							<li><!-- Eigenschaft: Name -->
+								<span id="NameEigenschaft">Name</span>
+								<br>
+								<span id="Beschreibung">gibt den Namen der Liste aus</span>
+								<br>
+								==> <i>TYP:<b> STRING</b></i>
+							</li><!-- Eigenschaft: Name ENDE -->
+							<li><!-- Eigenschaft: ID -->
+								<span id="NameEigenschaft">ID</span>
+								<br>
+								<span id="Beschreibung">gibt die ID der Liste aus</span>
+								<br>
+								==> <i>TYP:<b> INT</b></i>
+							</li><!-- Eigenschaft: ID ENDE -->
+						</ol><!-- Eigenschaften ENDE -->
+						<br>
+						<li><strong>Methoden:</strong></li>
+						<ol><!-- Methoden -->
+							<li><!-- Methode: getElement(id) -->
+								<span id="NameMethode">getElement</span>(
+									<span id="Parameter">id</span>)
+								<br>
+								<span id="Beschreibung">gibt ein Element der Liste aus</span>
+								<br>
+								<u>Parameter:</u>
+								<ol><!-- Parameter-Tabelle -->
+									<li><!-- Parameter: id -->
+										<span id="Parameter">id</span><br>
+										<span id="Beschreibung">ID des Listen-Elements</span><br>
+										==> <i>TYP:<b> INT </b></i>
+									</li><!-- Parameter: id ENDE -->
+								</ol>	<!-- Parameter-Tabelle ENDE -->
+								<u>Rückgabe:</u><br>
+								<ul><!-- RÜCKGABE -->
+									<span id="Beschreibung">Listen-Element </span><br>
+									==> <i>TYP:<b> &lt;T&gt; </b></i>(generisch)
+								</ul><!-- RÜCKGABE ENDE -->
+							</li><!-- Methode: getElement(id) ENDE -->
+							<li><!-- Methode: ADD(element) -->
+								<span id="NameMethode">ADD</span>(
+										<span id="Parameter">element</span>	
+										)
+								<br>
+								<span id="Beschreibung">fügt ein Element an die Liste an.</span>
+								<br>
+								<u>Parameter:</u>
+								<ol><!-- Parameter-Tabelle -->
+									<li><!-- Parameter: element -->
+										<span id="Parameter"> element </span><br>
+										<span id="Beschreibung"> neues Element der Liste </span>
+										<br>
+										==> <i>TYP:<b> T </b></i> (generisch)
+									</li><!-- Parameter: element ENDE -->
+								</ol>	
+								<!-- Parameter-Tabelle ENDE -->
+								<u>Rückgabe:</u><br>
+								<ul><!-- RÜCKGABE --> KEINE<br>
+								</ul><!-- RÜCKGABE ENDE -->
+							</li><!-- Methode: ADD(element) ENDE -->
+						</ol><!-- Methoden ENDE -->
+					</ul><!-- INHALT ENDE -->
+				</td><!-- Text ENDE -->
+			</tr><!-- Tabelle = Intern: Zeile 01 ENDE -->
+		</table><!-- Tabelle: Intern ENDE -->
+	</P><!-- Interne Struktur ENDE -->
+	<br>
+	<br>
+	VERSIONEN:
+	<ol>
+		<b>Klasse:</b> 0.1.1
+		<li><b>Konstruktor:</b> 0.1.1</li>
+		<li><b>Eigenschaften:</b></li>
+		<ol>
+			<li>Anzahl: 0.1.1</li>
+			<li>Liste: 0.1.1</li>
+			<li>Name: 0.1.1</li>
+			<li>Typ: 0.1.1</li>
+		</ol>
+		<li><b> Methoden:</b></li>
+		<ol>
+			<li>-ADD(element): 0.1.1</li>
+			<li>-getElement(id): 0.1.1</li>
+		</ol>
+	</ol>
+	<br>
+	<br>
+
+</body>
+</html>
+
+<!-- Version 0.1,
+	 Revision 1
+-->
+<!-- Editiert: 10.12.2016 13:43:06
+-->

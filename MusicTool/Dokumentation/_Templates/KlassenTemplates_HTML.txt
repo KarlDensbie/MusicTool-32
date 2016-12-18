@@ -1,0 +1,49 @@
+﻿KlassenTemplates
+----------------
+
+Variablen:
+----------
+					<tr><!-- variable  -->
+						<td><!-- Name der Variablen -->
+name
+</td>
+						<td><!-- Beschreibung der Variablen --><SPAN id="Beschreibung">
+text
+</SPAN></td>
+						<td><!-- Typ der Variablen --><SPAN id="Verweis">=&gt;
+typ
+</SPAN></td>
+					</tr>
+
+Methoden:
+---------
+					<tr><!-- methode  -->
+						<td><!-- Name der Methode -->
+name
+</td>
+						<td><!-- Beschreibung der Methode --><SPAN id="Beschreibung">
+text
+</SPAN></td>
+						<td><!-- Parameter  -->
+</td>
+						<td><!-- Rückgabe --><SPAN id="Beschreibung">
+return
+</SPAN>
+							<SPAN id="Verweis"><!-- Typ der Rückgabe -->=&gt; 
+ReturnType
+</SPAN></td>
+					</tr>
+
+Eigenschaften:
+--------------
+					<tr><!-- eigenschaft  -->
+						<td><!-- Name der Eigenschaft -->
+name
+</td>
+						<td><!-- Beschreibung der Eigenschaft --><SPAN id="Beschreibung">
+text
+</SPAN></td>
+						<td><!-- Typ der Eigenschaft --><SPAN id="Verweis">=&gt; 
+typ
+</SPAN></td>
+					</tr>

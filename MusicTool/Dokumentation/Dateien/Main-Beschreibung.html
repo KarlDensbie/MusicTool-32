@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+	<!-- Adresse der Datei:
+		V:/Dateien/Main-Beschreibung.html
+	 -->
+	<!-- Dateipfad DIESER Datei :
+		V:/Dateien/
+	-->
+	<!-- Relativer Pfad zu Stylesheet.CSS:
+../
+	-->
+
+<html>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+	<head>
+		<meta name="author" content="Michael P&uuml;tz">
+		<BASE target="_self" />
+		<link rel="stylesheet" href="../stylesheet.css" type="text/css">
+
+		<TITLE>Beschreibung</TITLE>
+	</head>
+	
+	<body>
+		<P align="center" id="hervorgehoben1a"><FONT size="7">Allgemeine Beschreibung</FONT></P>
+		<P >&nbsp;</P>
+		
+		<table border="0">
+			<colgroup><col width="750" valign="top"></colgroup>
+			
+			<tr><!-- erste Erklährungen -->
+				<td>
+					<P align="left">Dieses Tool soll von 3-6 eingegebenen T&ouml;nen ausgeben, in welchem
+						Modus und in welcher Tonart bzw. Akkorden diese T&ouml;ne vorkommen
+					</P>
+					<P align="left">Dazu wird zuerst ein aktueller Modus bestimmt, bis alle Modi
+						durchlaufen wurden<br>
+						Dann werden in jedem Modus alle Tonarten durchlaufen<br>
+						In allen Tonarten werden alle vorhandenen Intervalle zu T&ouml;nen
+						der aktuellen Tonart verarbeitet<BR>
+						Die aktuellen T&ouml;ne der aktuellen Tonart werden mit den
+						eingegebenen T&ouml;nen verglichen
+					</P>
+					<P align="left">Wenn ein eingegebener Ton mit einem Ton der aktuellen Tonart
+						oder einer enharmonischen Verwechselung &uuml;bereinstimmt, <BR>
+						wird der Ton mit zus&auml;tzlichen Informationen gespeichert. <BR>
+						<BR>
+					</P>
+				</td>				
+			</tr><!-- ENDE: erste Erklährungen -->
+			
+			<tr><!-- Die Informationen sind -->
+				<td
+					<BR>
+					
+					Die Informationen sind:<BR>
+					<ul>
+						<P align="left">=&gt Objekt <span id="Verweis">foundTon</span> mit:</P>
+						<OL>
+							<LI>
+								<P align="left">Link zum aktuellen <span id="Klasse">Modus</span>-Objekt</P>
+							</LI>
+							<LI>
+								<P align="left"><span id="hervorgehoben2">Intervall</span> des aktuellen Modus</P>
+							</LI>
+							<LI>
+								<P align="left">Link zum aktuellen <span id="Klasse">Tonart</span>-Objekt</P>
+							</LI>
+							<LI>
+								<P align="left"><span id="hervorgehoben2">Intervall</span> der aktuellen Tonart</P>
+							</LI>
+							<LI>
+								<P align="left">Link zum aktuellen <span id="Klasse">Ton</span> in der <span id="Klasse">TonDB</span></P>
+							</LI>
+							<LI>
+								<P align="left"><span id="hervorgehoben2">Index</span> des aktuellen <span id="Klasse">Tons</span> in der <span id="Klasse">TonDB</span></P>
+							</LI>
+							<LI>
+								<P align="left">Link zum <span id="Klasse">Ton</span>-Objekt der unteren enharmonischen Verwechselung
+									in der <span id="Klasse">TonDB</span>
+								</P>
+							</LI>
+							<LI>
+								<P align="left">Link zum <span id="Klasse">Ton</span>-Objekt der oberen enharmonischen Verwechselung
+									in der <span id="Klasse">TonDB</span>
+								</P>
+							</LI>
+							<LI>
+								<P align="left"><span id="hervorgehoben2">Intervall</span> zum Grundton der <span id="Klasse">Tonart</span></P>
+							</LI>
+							<LI>
+								<P align="left"><span id="hervorgehoben2">Art der Relation</span> (Grundton, untere bzw. obere enharmonische
+									Verwechselung)
+								</P>
+							</LI>
+							<LI>
+								<P align="left">Link zu den besetzten <span id="hervorgehoben2">Intervallen</span> der aktuellen <span id="Klasse">Tonart</span> im
+									aktuellen <span id="Klasse">Modus</span>
+								</P>
+							</LI>
+					  </OL>
+					</ul>
+
+				</td>
+			</tr><!-- ENDE: Die Informationen sind -->
+			
+			<tr><!-- nächste Schritte -->
+				<td
+					<BR>
+					
+					Danach wird verglichen, ob alle <span id="hervorgehoben2">Grundt&ouml;ne</span> oder eine der
+					<span id="hervorgehoben2">enharmonischen Verwechselungen</span> mit den eingegebenen T&ouml;nen &uuml;bereinstimmen. 
+					Wenn &quot;<span id="hervorgehoben2">JA</span>&quot;, wird der Ton mit den gewonnenen Informationen als tempor&auml;res &quot;<span id="Verweis">foundTon</span>&quot;-Objekt
+					gespeichert
+					<BR><BR>
+					
+					Wenn ein Ton als <span id="hervorgehoben2">Grundton</span> &uuml;bereinstimmt hat das ein <span id="hervorgehoben2">gr&ouml;&szlig;eres
+					Gewicht</span>, als wenn eine <span id="hervorgehoben2">Verwechselung</span> &uuml;bereinstimmt. Das Ergebnis wird als &quot;<span id="hervorgehoben2">Art
+					der Relation</span>&quot; gespeichert
+					<BR><BR>
+					
+					Nachdem alle Vergleiche abgeschlossen wurden, wird gepr&uuml;ft, wie
+					viele eingegebene T&ouml;ne in der aktuellen <span id="Klasse">Tonart</span> im aktuellen <span id="Klasse">Modus</span> vorkommen
+					<BR><BR>
+					
+					Danach werden alle T&ouml;ne innerhalb der aktuellen Tonart im
+					aktuellen Modus in <span id="hervorgehoben2">3 Verzeichnisb&auml;ume</span> gespeichert:
+					<BR>
+					
+					<ul>
+						<li>Tonart / Modus / Ton</li>
+						<li>Modus / Tonart / Ton</li>
+						<li>Akkord / Ton</li>
+					</ul>
+					
+					<span id="hervorgehoben2">damit</span> werden Suchaktionen erleichtert.<BR><BR>
+					
+				</td>
+			</tr><!-- ENDE: nächste Schritte -->
+			
+			<tr><!-- Abschluß der Suchaktion -->
+				<td
+					<BR><BR>
+					
+					Am Ende stehen 3 Datenbanken bereit, in denen nach den
+					Gesichtspunkten &quot;Akkord&quot;, &quot;Tonart&quot; bzw. &quot;Modus&quot; die gefunden &Uuml;bereinstimmungen zu finden
+					sind
+				</td>
+			</tr><!-- ENDE: Abschluß der Suchaktion -->
+			
+			
+			<tr><!-- Ausgabe -->
+				<td
+					<BR><BR>
+					
+					Als Ausgabe werden diverse Filter angeboten wie:
+					<oL>
+						<ul><!-- Akkorde -->
+							<li>Akkorde</li>
+							<ol>
+								<li>mit &uuml;bereinstimmen Grundton</li>
+								<li>ohne Grundton</li>
+								<li>Ohne Quinte</li>
+								<li>Ohne Terz</li>
+							</ol>
+						</ul>
+						<BR>
+						
+						<ul><!-- Modi -->
+							<li>Modi -&nbsp; in allen Tonarten in denen mindestens 3 T&ouml;ne mit den
+								eingegebenen T&ouml;nen &uuml;bereinstimmen
+							</li>
+							<ol>
+								<li>mit &uuml;bereinstimmendem Grundton</li>
+								<li>ohne Grundton</li>
+								<li>Ohne Quinte</li>
+							</ol>
+						</ul>
+						<BR>
+						
+						<ul><!-- Tonarten -->
+							<li>Tonarten - in allen Modi, in denen mindestens 3 T&ouml;ne mit den
+								eingegebenen T&ouml;nen &uuml;bereinstimmen</li>
+							<ol>
+								<li>mit &uuml;bereinstimmendem Grundton</li>
+								<li>ohne Grundton</li>
+								<li>Ohne Quinte</li>
+							</ol>
+						</ul>
+					</oL>
+				</td>
+			</tr><!-- ENDE: Ausgabe -->
+			
+		</table>
+		<P >&nbsp;</P>
+		
+
+	</body>
+</html>
+
+<!-- Version 0.1,
+	 Revision 1
+-->
+<!-- Editiert: 04.12.2016 15:47:24
+-->

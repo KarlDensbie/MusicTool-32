@@ -1,0 +1,18 @@
+﻿						<SPAN id="Beschreibung">
+param
+</SPAN>
+							<SPAN id="Verweis"><!-- Typ des Parameters --> =&gt; 
+paramTyp
+</SPAN>
+						<BR>
+------------------------------------------------------------------------------------
+						<SPAN id="Beschreibung">
+return
+</SPAN>
+							<SPAN id="Verweis"><!-- Typ der Rückgabe -->=&gt; 
+ReturnType
+</SPAN>
+------------------------------------------------------------------------------------
+					<td><!-- Parameter  --><SPAN id="Beschreibung">-----</SPAN></td>
+------------------------------------------------------------------------------------
+					<td><!-- Rückgabe --><SPAN id="Beschreibung">-----</SPAN></td>
